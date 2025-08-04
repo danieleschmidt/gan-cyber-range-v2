@@ -609,7 +609,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ```bibtex
 @article{gan_cyber_range_v2_2025,
   title={GAN-Cyber-Range-v2: Adversarial Cyber Range with GAN-based Attack Generation and LLM Red Teams},
-  author={Your Name et al.},
+  author={Daniel Schmidt},
   journal={Computers & Security},
   year={2025},
   doi={10.1016/j.cose.2025.XXXXX}
