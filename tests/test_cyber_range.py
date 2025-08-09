@@ -9,7 +9,7 @@ import tempfile
 import threading
 import time
 from pathlib import Path
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch, MagicMock, mock_open
 from datetime import datetime, timedelta
 
 from gan_cyber_range.core.cyber_range import (
