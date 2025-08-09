@@ -1,0 +1,447 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+  namespace: gan-cyber-range
+  labels:
+    app.kubernetes.io/name: gan-cyber-range-api
+    app.kubernetes.io/component: api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+      name: http
+    - port: 9090
+      targetPort: 9090
+      protocol: TCP
+      name: metrics
+  selector:
+    app.kubernetes.io/name: gan-cyber-range-api
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: api-models-pvc
+  namespace: gan-cyber-range
+  labels:
+    app.kubernetes.io/name: gan-cyber-range-api
+    app.kubernetes.io/component: storage
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: shared-storage
+  resources:
+    requests:
+      storage: 500Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: api-data-pvc
+  namespace: gan-cyber-range
+  labels:
+    app.kubernetes.io/name: gan-cyber-range-api
+    app.kubernetes.io/component: storage
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: fast-ssd
+  resources:
+    requests:
+      storage: 200Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gan-cyber-range-api
+  namespace: gan-cyber-range
+  labels:
+    app.kubernetes.io/name: gan-cyber-range-api
+    app.kubernetes.io/component: api
+    app.kubernetes.io/version: "2.0.0"
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gan-cyber-range-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gan-cyber-range-api
+        app.kubernetes.io/component: api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/metrics"
+    spec:
+      serviceAccountName: cyber-range-api
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      imagePullSecrets:
+        - name: docker-registry-secret
+      initContainers:
+        - name: wait-for-postgres
+          image: postgres:15-alpine
+          command:
+            - sh
+            - -c
+            - |
+              until pg_isready -h postgresql-service -p 5432 -U $DATABASE_USERNAME; do
+                echo "Waiting for PostgreSQL..."
+                sleep 2
+              done
+          env:
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: cyber-range-secrets
+                  key: DATABASE_USERNAME
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+        
+        - name: database-migration
+          image: terragon/gan-cyber-range-v2:latest
+          command:
+            - python
+            - -m
+            - alembic
+            - upgrade
+            - head
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: cyber-range-secrets
+                  key: DATABASE_URL
+          volumeMounts:
+            - name: api-data
+              mountPath: /app/data
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: false
+            runAsNonRoot: true
+            runAsUser: 1000
+      
+      containers:
+        - name: api
+          image: terragon/gan-cyber-range-v2:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+              name: http
+              protocol: TCP
+            - containerPort: 9090
+              name: metrics
+              protocol: TCP
+          command:
+            - uvicorn
+            - gan_cyber_range.api.main:app
+            - --host=0.0.0.0
+            - --port=8000
+            - --workers=4
+            - --log-level=info
+            - --access-log
+          env:
+            # Database configuration
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: cyber-range-secrets
+                  key: DATABASE_URL
+            
+            # Redis configuration
+            - name: REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: cyber-range-secrets
+                  key: REDIS_URL
+            
+            # JWT configuration
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: cyber-range-secrets
+                  key: JWT_SECRET
+            - name: JWT_ALGORITHM
+              valueFrom:
+                secretKeyRef:
+                  name: cyber-range-secrets
+                  key: JWT_ALGORITHM
+            - name: JWT_EXPIRATION_HOURS
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: JWT_EXPIRATION_HOURS
+            
+            # API configuration
+            - name: API_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: API_HOST
+            - name: API_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: API_PORT
+            
+            # External API keys
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: cyber-range-secrets
+                  key: OPENAI_API_KEY
+            - name: HUGGINGFACE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: cyber-range-secrets
+                  key: HUGGINGFACE_TOKEN
+            
+            # Paths
+            - name: GAN_MODEL_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: GAN_MODEL_PATH
+            - name: LLM_MODEL_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: LLM_MODEL_PATH
+            - name: STORAGE_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: STORAGE_PATH
+            
+            # Configuration
+            - name: LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: LOG_LEVEL
+            - name: MAX_ATTACK_GENERATION
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: MAX_ATTACK_GENERATION
+            - name: MAX_CONCURRENT_RANGES
+              valueFrom:
+                configMapKeyRef:
+                  name: cyber-range-config
+                  key: MAX_CONCURRENT_RANGES
+            
+            # Kubernetes specific
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+                  
+          volumeMounts:
+            - name: api-models
+              mountPath: /app/models
+              readOnly: true
+            - name: api-data
+              mountPath: /app/data
+            - name: tmp
+              mountPath: /tmp
+              
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+            
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+            
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 30
+            
+          resources:
+            requests:
+              memory: "4Gi"
+              cpu: "2"
+              nvidia.com/gpu: "0"
+            limits:
+              memory: "8Gi"
+              cpu: "4"
+              nvidia.com/gpu: "1"
+              
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+            
+      volumes:
+        - name: api-models
+          persistentVolumeClaim:
+            claimName: api-models-pvc
+        - name: api-data
+          persistentVolumeClaim:
+            claimName: api-data-pvc
+        - name: tmp
+          emptyDir: {}
+          
+      nodeSelector:
+        node-type: "compute-gpu"
+        
+      tolerations:
+        - key: "nvidia.com/gpu"
+          operator: "Exists"
+          effect: "NoSchedule"
+          
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/name: gan-cyber-range-api
+                topologyKey: kubernetes.io/hostname
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cyber-range-api
+  namespace: gan-cyber-range
+  labels:
+    app.kubernetes.io/name: gan-cyber-range-api
+    app.kubernetes.io/component: serviceaccount
+automountServiceAccountToken: true
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: gan-cyber-range
+  name: cyber-range-api-role
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "services", "configmaps", "secrets"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["apps"]
+    resources: ["deployments", "replicasets"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["networking.k8s.io"]
+    resources: ["networkpolicies"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cyber-range-api-binding
+  namespace: gan-cyber-range
+subjects:
+  - kind: ServiceAccount
+    name: cyber-range-api
+    namespace: gan-cyber-range
+roleRef:
+  kind: Role
+  name: cyber-range-api-role
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: gan-cyber-range-api-hpa
+  namespace: gan-cyber-range
+  labels:
+    app.kubernetes.io/name: gan-cyber-range-api
+    app.kubernetes.io/component: hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: gan-cyber-range-api
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+        - type: Percent
+          value: 50
+          periodSeconds: 60
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+        - type: Percent
+          value: 100
+          periodSeconds: 60
+        - type: Pods
+          value: 2
+          periodSeconds: 60

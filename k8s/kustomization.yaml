@@ -1,0 +1,80 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+metadata:
+  name: gan-cyber-range-v2
+  namespace: gan-cyber-range
+
+# Common labels applied to all resources
+commonLabels:
+  app.kubernetes.io/name: gan-cyber-range-v2
+  app.kubernetes.io/version: "2.0.0"
+  app.kubernetes.io/managed-by: kustomize
+
+# Common annotations
+commonAnnotations:
+  terragon.com/project: gan-cyber-range-v2
+  terragon.com/environment: production
+
+# Resources to include in deployment
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - secrets.yaml
+  - postgresql.yaml
+  - redis.yaml
+  - api-deployment.yaml
+  - nginx-deployment.yaml
+  - monitoring.yaml
+
+# Images to use (can be overridden per environment)
+images:
+  - name: terragon/gan-cyber-range-v2
+    newTag: "2.0.0"
+
+# ConfigMap generator for additional configurations
+configMapGenerator:
+  - name: deployment-config
+    literals:
+      - DEPLOYMENT_DATE=$(date)
+      - DEPLOYMENT_VERSION=2.0.0
+      - KUBERNETES_CLUSTER=production
+      - ENVIRONMENT=production
+
+# Secret generator for runtime secrets
+secretGenerator:
+  - name: runtime-secrets
+    literals:
+      - DEPLOYMENT_ID=$(uuidgen)
+    type: Opaque
+
+# Namespace for all resources
+namespace: gan-cyber-range
+
+# Patches for different environments
+patchesStrategicMerge:
+  - patches/production-patches.yaml
+
+# JSON patches
+patchesJson6902:
+  - target:
+      version: v1
+      kind: Service
+      name: nginx-service
+    path: patches/nginx-service-patch.yaml
+
+# Replicas adjustments
+replicas:
+  - name: gan-cyber-range-api
+    count: 3
+  - name: nginx
+    count: 2
+  - name: postgresql
+    count: 1
+  - name: redis
+    count: 1
+
+# Transformers
+transformers:
+  - transformers/resource-limits.yaml
+  - transformers/security-context.yaml
