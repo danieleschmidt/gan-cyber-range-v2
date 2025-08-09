@@ -146,7 +146,7 @@ class RedTeamLLM:
             'strategy': campaign_strategy,
             'materials': campaign_materials,
             'timeline': self._generate_se_timeline(campaign_strategy),
-            'success_metrics': self._define_se_success_metrics(campaign_type)
+            'success_metrics': self._define_se_success_criteria(campaign_type)
         }
         
         return campaign
