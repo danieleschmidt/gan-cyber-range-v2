@@ -1,0 +1,735 @@
+{
+  "scan_summary": {
+    "timestamp": "2025-08-11T04:56:30.517699",
+    "scan_duration": 2.283166,
+    "files_scanned": 84,
+    "issues_found": 80,
+    "critical_issues": 7,
+    "high_issues": 14,
+    "medium_issues": 11,
+    "low_issues": 48
+  },
+  "security_score": 0,
+  "issues": [
+    {
+      "severity": "critical",
+      "category": "hardcoded_secrets",
+      "description": "Potential hardcoded secrets vulnerability detected",
+      "file": "gan_cyber_range/api/auth.py",
+      "line": 316,
+      "recommendation": "Use environment variables or secure secret management systems",
+      "cwe_id": "CWE-798"
+    },
+    {
+      "severity": "critical",
+      "category": "hardcoded_secrets",
+      "description": "Potential hardcoded secrets vulnerability detected",
+      "file": "gan_cyber_range/api/auth.py",
+      "line": 326,
+      "recommendation": "Use environment variables or secure secret management systems",
+      "cwe_id": "CWE-798"
+    },
+    {
+      "severity": "critical",
+      "category": "command_injection",
+      "description": "Potential command injection vulnerability detected",
+      "file": "gan_cyber_range/core/attack_gan.py",
+      "line": 261,
+      "recommendation": "Avoid using user input in system commands, use subprocess with shell=False",
+      "cwe_id": "CWE-78"
+    },
+    {
+      "severity": "critical",
+      "category": "command_injection",
+      "description": "Potential command injection vulnerability detected",
+      "file": "gan_cyber_range/utils/optimization.py",
+      "line": 114,
+      "recommendation": "Avoid using user input in system commands, use subprocess with shell=False",
+      "cwe_id": "CWE-78"
+    },
+    {
+      "severity": "critical",
+      "category": "command_injection",
+      "description": "Potential command injection vulnerability detected",
+      "file": "gan_cyber_range/utils/optimization.py",
+      "line": 201,
+      "recommendation": "Avoid using user input in system commands, use subprocess with shell=False",
+      "cwe_id": "CWE-78"
+    },
+    {
+      "severity": "critical",
+      "category": "command_injection",
+      "description": "Potential command injection vulnerability detected",
+      "file": "gan_cyber_range/utils/performance.py",
+      "line": 301,
+      "recommendation": "Avoid using user input in system commands, use subprocess with shell=False",
+      "cwe_id": "CWE-78"
+    },
+    {
+      "severity": "critical",
+      "category": "hardcoded_secrets",
+      "description": "Potential hardcoded secrets vulnerability detected",
+      "file": "tests/test_security.py",
+      "line": 64,
+      "recommendation": "Use environment variables or secure secret management systems",
+      "cwe_id": "CWE-798"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "standalone_test.py",
+      "line": 225,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "standalone_test.py",
+      "line": 237,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "test_runner.py",
+      "line": 173,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "test_runner.py",
+      "line": 186,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "security_scanner.py",
+      "line": 91,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "unsafe_deserialization",
+      "description": "Potential unsafe deserialization vulnerability detected",
+      "file": "gan_cyber_range/utils/caching.py",
+      "line": 258,
+      "recommendation": "Use safe serialization formats like JSON, avoid pickle with untrusted data",
+      "cwe_id": "CWE-502"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "gan_cyber_range/utils/security.py",
+      "line": 333,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "gan_cyber_range/utils/enhanced_security.py",
+      "line": 96,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "tests/test_security.py",
+      "line": 521,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "tests/test_security.py",
+      "line": 543,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "tests/test_utils.py",
+      "line": 305,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "tests/test_utils.py",
+      "line": 315,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "tests/test_demo_system.py",
+      "line": 256,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "high",
+      "category": "path_traversal",
+      "description": "Potential path traversal vulnerability detected",
+      "file": "tests/test_demo_system.py",
+      "line": 545,
+      "recommendation": "Validate and sanitize file paths, use os.path.abspath()",
+      "cwe_id": "CWE-22"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "docs/RESEARCH.md",
+      "line": 228,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "docs/RESEARCH.md",
+      "line": 239,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "gan_cyber_range/factories/range_factory.py",
+      "line": 473,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "gan_cyber_range/optimization/query_optimizer.py",
+      "line": 200,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "gan_cyber_range/optimization/enhanced_performance.py",
+      "line": 645,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "gan_cyber_range/utils/caching.py",
+      "line": 595,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "gan_cyber_range/utils/security.py",
+      "line": 597,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "gan_cyber_range/utils/security.py",
+      "line": 758,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "weak_crypto",
+      "description": "Potential weak crypto vulnerability detected",
+      "file": "gan_cyber_range/config/config_manager.py",
+      "line": 278,
+      "recommendation": "Use strong cryptographic algorithms like SHA-256 or better",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "medium",
+      "category": "file_permissions",
+      "description": "Sensitive file is world-readable: 644",
+      "file": "gan_cyber_range/utils/logging_config.py",
+      "line": 1,
+      "recommendation": "Restrict file permissions to owner only (600)",
+      "cwe_id": "CWE-732"
+    },
+    {
+      "severity": "medium",
+      "category": "file_permissions",
+      "description": "Sensitive file is world-readable: 644",
+      "file": "k8s/secrets.yaml",
+      "line": 1,
+      "recommendation": "Restrict file permissions to owner only (600)",
+      "cwe_id": "CWE-732"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: os",
+      "file": "security_scanner.py",
+      "line": 12,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: subprocess",
+      "file": "security_scanner.py",
+      "line": 18,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "docs/RESEARCH.md",
+      "line": 758,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 198,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 202,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 90,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 111,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 113,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 114,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 114,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 77,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 79,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 110,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 112,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 116,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 119,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 121,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 122,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 123,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 124,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 125,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/demo.py",
+      "line": 293,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: os",
+      "file": "gan_cyber_range/api/auth.py",
+      "line": 13,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/attack_engine.py",
+      "line": 368,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/attack_engine.py",
+      "line": 464,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/attack_gan.py",
+      "line": 438,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: subprocess",
+      "file": "gan_cyber_range/core/cyber_range.py",
+      "line": 16,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/network_sim.py",
+      "line": 414,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/network_sim.py",
+      "line": 450,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/network_sim.py",
+      "line": 410,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/network_sim.py",
+      "line": 459,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/network_sim.py",
+      "line": 404,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/core/network_sim.py",
+      "line": 405,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: os",
+      "file": "gan_cyber_range/db/database.py",
+      "line": 6,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/factories/network_factory.py",
+      "line": 211,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/factories/network_factory.py",
+      "line": 448,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/factories/network_factory.py",
+      "line": 482,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: os",
+      "file": "gan_cyber_range/optimization/performance_monitor.py",
+      "line": 16,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/red_team/llm_adversary.py",
+      "line": 224,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/red_team/llm_adversary.py",
+      "line": 539,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/red_team/llm_adversary.py",
+      "line": 883,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/red_team/llm_adversary.py",
+      "line": 884,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "insecure_random",
+      "description": "Potential insecure random vulnerability detected",
+      "file": "gan_cyber_range/red_team/llm_adversary.py",
+      "line": 904,
+      "recommendation": "Use secrets module for cryptographic purposes",
+      "cwe_id": "CWE-330"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: os",
+      "file": "gan_cyber_range/utils/optimization.py",
+      "line": 280,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: subprocess",
+      "file": "gan_cyber_range/utils/security.py",
+      "line": 14,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: os",
+      "file": "gan_cyber_range/config/config_manager.py",
+      "line": 12,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: os",
+      "file": "tests/test_security.py",
+      "line": 478,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    },
+    {
+      "severity": "low",
+      "category": "dangerous_import",
+      "description": "Import of potentially dangerous module: os",
+      "file": "tests/test_security.py",
+      "line": 492,
+      "recommendation": "Ensure proper input validation when using this module",
+      "cwe_id": "CWE-676"
+    }
+  ]
+}
