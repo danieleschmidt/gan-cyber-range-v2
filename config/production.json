@@ -1,0 +1,36 @@
+{
+  "environment": "production",
+  "debug": false,
+  "host": "0.0.0.0",
+  "port": 8000,
+  "workers": 4,
+  "database": {
+    "host": "postgres",
+    "port": 5432,
+    "database": "gan_cyber_range",
+    "username": "postgres"
+  },
+  "cache": {
+    "type": "redis",
+    "host": "redis",
+    "port": 6379
+  },
+  "security": {
+    "token_expiry_hours": 24,
+    "max_failed_attempts": 5,
+    "require_mfa": false,
+    "rate_limit_requests": 100
+  },
+  "performance": {
+    "max_concurrent_ranges": 50,
+    "worker_threads": 8,
+    "cache_enabled": true,
+    "compression_enabled": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file_path": "logs/production.log",
+    "max_file_size_mb": 100,
+    "backup_count": 10
+  }
+}
