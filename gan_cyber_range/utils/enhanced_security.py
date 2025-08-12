@@ -291,10 +291,11 @@ class ThreatDetectionEngine:
         
         entropy = 0
         length = len(data)
+        import math
         for count in frequency.values():
             if count > 0:
                 probability = count / length
-                entropy -= probability * (probability.bit_length() - 1)
+                entropy -= probability * math.log2(probability)
         
         return entropy
     
