@@ -7,7 +7,7 @@ import asyncio
 import threading
 import queue
 import time
-from typing import Dict, Any, List, Optional, Callable, TypeVar, Generic, Union
+from typing import Dict, Any, List, Optional, Callable, TypeVar, Generic, Union, TYPE_CHECKING
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from enum import Enum
@@ -17,6 +17,9 @@ import weakref
 logger = logging.getLogger(__name__)
 
 T = TypeVar('T')
+
+if TYPE_CHECKING:
+    from typing import TYPE_CHECKING
 
 
 class ResourceState(Enum):
@@ -70,7 +73,7 @@ class ResourcePool(Generic[T]):
         self.health_check = health_check
         self.cleanup = cleanup
         
-        self._pool: Dict[str, PooledResource[T]] = {}
+        self._pool: Dict[str, 'PooledResource[T]'] = {}
         self._available = queue.Queue()
         self._lock = threading.RLock()
         self._condition = threading.Condition(self._lock)
@@ -93,7 +96,7 @@ class ResourcePool(Generic[T]):
                 
         logger.info(f"Initialized resource pool with {len(self._pool)} resources")
         
-    def _create_resource(self) -> Optional[PooledResource[T]]:
+    def _create_resource(self) -> Optional['PooledResource[T]']:
         """Create a new resource"""
         try:
             resource = self.factory()
@@ -207,7 +210,7 @@ class ResourcePool(Generic[T]):
                     self.metrics.active_connections -= 1
                     self._condition.notify()
                     
-    def _perform_health_check(self, pooled_resource: PooledResource[T]) -> bool:
+    def _perform_health_check(self, pooled_resource: 'PooledResource[T]') -> bool:
         """Perform health check on resource"""
         if not self.health_check:
             return True

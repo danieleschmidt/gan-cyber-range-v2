@@ -283,6 +283,7 @@ class AttackEngine:
                     break
             
             # Add delay between steps for realism
+            import random
             time.sleep(random.uniform(5, 30))
         
         logger.info(f"Campaign execution completed: {campaign.name}")
@@ -461,6 +462,7 @@ class AttackEngine:
         # Add technique-specific artifacts
         if step.technique_id == 'T1059':  # Command Line
             artifacts['command_executed'] = step.payload.get('command', 'unknown')
+            import random
             artifacts['process_id'] = random.randint(1000, 9999)
             
         elif step.technique_id == 'T1078':  # Valid Accounts
