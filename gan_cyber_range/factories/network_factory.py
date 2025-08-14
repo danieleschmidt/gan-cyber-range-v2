@@ -128,7 +128,7 @@ class NetworkFactory:
             default_services=["api_gateway", "microservices", "database", "ci_cd", "monitoring"],
             vulnerability_density=0.35,
             complexity_score=6
-        }
+        )
     }
     
     def __init__(self):
