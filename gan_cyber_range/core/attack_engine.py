@@ -343,7 +343,13 @@ class AttackEngine:
             'T1110': self._execute_brute_force,
             'T1046': self._execute_network_scan,
             'T1083': self._execute_file_discovery,
-            'T1082': self._execute_system_info_discovery
+            'T1082': self._execute_system_info_discovery,
+            'T1003': self._execute_credential_dumping,
+            'T1055': self._execute_process_injection,
+            'T1070': self._execute_indicator_removal,
+            'T1005': self._execute_data_from_local_system,
+            'T1041': self._execute_exfiltration_c2,
+            'T1486': self._execute_data_encrypted_impact
         }
         
         # Get implementation function
@@ -359,7 +365,15 @@ class AttackEngine:
             'high': 0.7
         }.get(target_host.security_level, 1.0)
         
-        adjusted_probability = min(1.0, base_probability * security_modifier)
+        # Vulnerability modifier - attacks succeed more against vulnerable hosts
+        vuln_modifier = 1.0
+        if target_host.vulnerabilities:
+            relevant_vulns = [v for v in target_host.vulnerabilities if any(service in step.payload.get('services', []) for service in v.affected_services)]
+            if relevant_vulns:
+                max_severity = max(v.severity for v in relevant_vulns)
+                vuln_modifier = 1.0 + (max_severity / 10.0) * 0.5  # Up to 50% boost for critical vulns
+        
+        adjusted_probability = min(1.0, base_probability * security_modifier * vuln_modifier)
         
         # Execute technique
         success = impl_func(step, target_host)
@@ -439,6 +453,48 @@ class AttackEngine:
         
         # System info discovery typically succeeds
         return True
+    
+    def _execute_credential_dumping(self, step: AttackStep, target_host: Host) -> bool:
+        """Execute credential dumping (T1003)"""
+        logger.debug(f"Executing credential dumping on {target_host.name}")
+        
+        # More likely to succeed on Windows systems
+        return target_host.os_type.value in ['windows'] or target_host.security_level != 'high'
+    
+    def _execute_process_injection(self, step: AttackStep, target_host: Host) -> bool:
+        """Execute process injection (T1055)"""
+        logger.debug(f"Executing process injection on {target_host.name}")
+        
+        # Advanced technique, less likely to succeed on hardened systems
+        return target_host.security_level != 'high'
+    
+    def _execute_indicator_removal(self, step: AttackStep, target_host: Host) -> bool:
+        """Execute indicator removal (T1070)"""
+        logger.debug(f"Executing indicator removal on {target_host.name}")
+        
+        # Anti-forensics technique, usually succeeds if we have access
+        return True
+    
+    def _execute_data_from_local_system(self, step: AttackStep, target_host: Host) -> bool:
+        """Execute data collection from local system (T1005)"""
+        logger.debug(f"Executing data collection on {target_host.name}")
+        
+        # Data collection typically succeeds if we have file system access
+        return target_host.crown_jewel or len(target_host.services) > 0
+    
+    def _execute_exfiltration_c2(self, step: AttackStep, target_host: Host) -> bool:
+        """Execute exfiltration over C2 channel (T1041)"""
+        logger.debug(f"Executing exfiltration on {target_host.name}")
+        
+        # Depends on network monitoring and DLP controls
+        return target_host.security_level != 'high' or not target_host.monitoring_enabled
+    
+    def _execute_data_encrypted_impact(self, step: AttackStep, target_host: Host) -> bool:
+        """Execute data encryption for impact/ransomware (T1486)"""
+        logger.debug(f"Executing data encryption impact on {target_host.name}")
+        
+        # Ransomware typically succeeds if we have file system access
+        return target_host.host_type.value in ['workstation', 'server']
     
     def _execute_generic(self, step: AttackStep, target_host: Host) -> bool:
         """Execute generic attack technique"""

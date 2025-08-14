@@ -534,20 +534,97 @@ def create_security_event(
     return event
 
 
-# Security decorator for API endpoints
-def security_check(threat_level: ThreatLevel = ThreatLevel.MEDIUM):
-    """Decorator for endpoint security checks"""
+# Enhanced security decorator for API endpoints
+def security_check(threat_level: ThreatLevel = ThreatLevel.MEDIUM, require_auth: bool = True, rate_limit: bool = True):
+    """Enhanced decorator for endpoint security checks"""
     def decorator(func):
         def wrapper(*args, **kwargs):
-            # Perform security checks here
+            # Extract client information
+            client_id = kwargs.get('client_id', 'unknown')
+            
+            # Input validation for all arguments
+            for arg_name, arg_value in kwargs.items():
+                if isinstance(arg_value, (str, dict, list)):
+                    if isinstance(arg_value, str):
+                        validation = input_validator.validate_input(arg_value, arg_name, client_id)
+                        if not validation['is_valid']:
+                            create_security_event(
+                                SecurityEventType.SUSPICIOUS_INPUT,
+                                validation['severity'],
+                                {
+                                    'function': func.__name__,
+                                    'argument': arg_name,
+                                    'threats': validation['threats_detected'],
+                                    'client_id': client_id
+                                }
+                            )
+                            raise ValueError(f"Invalid input for {arg_name}: {validation['threats_detected']}")
+            
+            # Perform security checks
             try:
-                return func(*args, **kwargs)
+                result = func(*args, **kwargs)
+                return result
             except Exception as e:
                 create_security_event(
                     SecurityEventType.UNAUTHORIZED_ACCESS,
                     threat_level,
-                    {'error': str(e), 'function': func.__name__}
+                    {
+                        'error': str(e),
+                        'function': func.__name__,
+                        'client_id': client_id
+                    }
                 )
                 raise
         return wrapper
     return decorator
+
+
+# Security monitoring functions
+def monitor_security_events() -> Dict[str, Any]:
+    """Monitor and return current security status"""
+    summary = audit_logger.get_security_summary(24)
+    
+    # Add threat level assessment
+    if summary['critical_events'] > 0:
+        summary['overall_threat_level'] = ThreatLevel.CRITICAL.value
+    elif summary['high_risk_events'] > 5:
+        summary['overall_threat_level'] = ThreatLevel.HIGH.value
+    elif summary['medium_risk_events'] > 10:
+        summary['overall_threat_level'] = ThreatLevel.MEDIUM.value
+    else:
+        summary['overall_threat_level'] = ThreatLevel.LOW.value
+    
+    return summary
+
+
+def validate_cyber_range_operation(operation: str, params: Dict[str, Any], client_id: str = 'unknown') -> bool:
+    """Validate cyber range operation for security"""
+    # Validate operation type
+    allowed_operations = [
+        'create_range', 'deploy_range', 'start_attack', 'stop_attack',
+        'generate_attacks', 'evaluate_performance', 'create_scenario'
+    ]
+    
+    if operation not in allowed_operations:
+        create_security_event(
+            SecurityEventType.UNAUTHORIZED_ACCESS,
+            ThreatLevel.HIGH,
+            {'operation': operation, 'reason': 'unknown_operation', 'client_id': client_id}
+        )
+        return False
+    
+    # Validate parameters
+    validation = input_validator.validate_attack_config(params, client_id)
+    if not validation['is_safe']:
+        create_security_event(
+            SecurityEventType.MALICIOUS_PAYLOAD,
+            validation['threat_level'],
+            {
+                'operation': operation,
+                'issues': validation['issues'],
+                'client_id': client_id
+            }
+        )
+        return False
+    
+    return True
