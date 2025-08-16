@@ -1,0 +1,272 @@
+# Suricata Rules for Detecting GAN-Cyber-Range-v2 Network Activities
+#
+# Purpose: Network-based detection of adversarial AI attack generation platforms
+# Author: Defensive Security Team
+# Date: 2025-08-16
+#
+# These rules detect network traffic associated with GAN-based attack systems
+
+# GAN Model Communication Detection
+alert tcp any any -> any any (msg:"GAN Attack Generator - Model Inference Request"; \
+    content:"POST"; http_method; \
+    content:"/generate"; http_uri; \
+    content:"application/json"; http_content_type; \
+    pcre:"/synthetic|gan|attack|malware/i"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000001; rev:1; \
+    metadata:policy balanced-ips drop, policy security-ips alert;)
+
+# Synthetic Attack Pattern Download
+alert http any any -> any any (msg:"GAN Cyber Range - Synthetic Attack Download"; \
+    content:"GET"; http_method; \
+    pcre:"/\/(synthetic|generated|attack).*\.(py|exe|bin|dat)$/i"; \
+    content:"User-Agent|3a| GAN-Cyber-Range"; \
+    reference:url,defensive-security-team.local; \
+    classtype:policy-violation; \
+    sid:1000002; rev:1; \
+    metadata:policy balanced-ips drop;)
+
+# AI Model Training Data Transfer
+alert tcp any any -> any any (msg:"Large ML Training Data Transfer"; \
+    content:"Content-Type|3a| application/octet-stream"; \
+    byte_test:4,>,10485760,0,relative; \
+    content:"model"; \
+    content:"training"; \
+    reference:url,defensive-security-team.local; \
+    classtype:suspicious-filename-detect; \
+    sid:1000003; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# PyTorch Model Loading Attempt
+alert http any any -> any any (msg:"PyTorch Model Remote Loading"; \
+    content:"GET"; http_method; \
+    pcre:"/\.pth$|\.pt$|\.pkl$/i"; \
+    content:"torch"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000004; rev:1; \
+    metadata:policy balanced-ips drop;)
+
+# GAN-Generated C2 Communication Pattern
+alert tcp any any -> any any (msg:"High Entropy C2 Communication (Possible GAN)"; \
+    dsize:>100; \
+    entropy:>7.5; \
+    flow:established,to_server; \
+    content:!"HTTP"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000005; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Synthetic Malware Sample Upload
+alert http any any -> any any (msg:"Synthetic Malware Sample Upload"; \
+    content:"POST"; http_method; \
+    content:"multipart/form-data"; http_content_type; \
+    content:"filename"; \
+    pcre:"/synthetic|generated|sample/i"; \
+    content:"malware"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000006; rev:1; \
+    metadata:policy balanced-ips drop;)
+
+# Red Team LLM API Communication
+alert tcp any any -> any any (msg:"Red Team LLM API Communication"; \
+    content:"POST"; http_method; \
+    content:"/api/"; http_uri; \
+    content:"adversary"; \
+    content:"campaign"; \
+    reference:url,defensive-security-team.local; \
+    classtype:policy-violation; \
+    sid:1000007; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Attack Plan Generation Request
+alert http any any -> any any (msg:"Attack Plan Generation Request"; \
+    content:"POST"; http_method; \
+    content:"application/json"; http_content_type; \
+    content:"generate_attack_plan"; \
+    content:"target_profile"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000008; rev:1; \
+    metadata:policy balanced-ips drop;)
+
+# Social Engineering Campaign Data
+alert http any any -> any any (msg:"Social Engineering Campaign Generation"; \
+    content:"POST"; http_method; \
+    content:"spear_phishing"; \
+    content:"susceptibility_score"; \
+    content:"pretext"; \
+    reference:url,defensive-security-team.local; \
+    classtype:social-engineering; \
+    sid:1000009; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# MITRE ATT&CK Technique Automation
+alert tcp any any -> any any (msg:"Automated MITRE ATT&CK Technique Execution"; \
+    content:"T1078"; \
+    content:"T1190"; \
+    content:"T1059"; \
+    content:"execute"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000010; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# GAN Training Progress Monitoring
+alert tcp any any -> any any (msg:"GAN Training Progress Communication"; \
+    content:"training_history"; \
+    content:"g_loss"; \
+    content:"d_loss"; \
+    content:"diversity_score"; \
+    reference:url,defensive-security-team.local; \
+    classtype:policy-violation; \
+    sid:1000011; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Anti-Analysis Technique Download
+alert http any any -> any any (msg:"Anti-Analysis Technique Download"; \
+    content:"GET"; http_method; \
+    pcre:"/evasion|anti.analysis|sandbox.evasion/i"; \
+    content:"technique"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000012; rev:1; \
+    metadata:policy balanced-ips drop;)
+
+# Threat Intelligence Spoofing
+alert http any any -> any any (msg:"Threat Intelligence Spoofing Activity"; \
+    content:"POST"; http_method; \
+    content:"simulate_threat_intelligence"; \
+    content:"apt_profile"; \
+    content:"iocs"; \
+    reference:url,defensive-security-team.local; \
+    classtype:policy-violation; \
+    sid:1000013; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Adaptive Attack Behavior
+alert tcp any any -> any any (msg:"Adaptive Attack Behavior Detection"; \
+    content:"adapt_tactics"; \
+    content:"detection_events"; \
+    content:"blue_team_response"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000014; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Large Model Parameter Transfer
+alert tcp any any -> any any (msg:"Large AI Model Parameter Transfer"; \
+    dsize:>50000000; \
+    content:"state_dict"; \
+    content:"checkpoint"; \
+    flow:established; \
+    reference:url,defensive-security-team.local; \
+    classtype:suspicious-filename-detect; \
+    sid:1000015; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Malware Family Generation
+alert http any any -> any any (msg:"Malware Family Generation Request"; \
+    content:"POST"; http_method; \
+    content:"malware_types"; \
+    pcre:"/trojan|ransomware|backdoor|worm/i"; \
+    content:"target_families"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000016; rev:1; \
+    metadata:policy balanced-ips drop;)
+
+# Steganographic Communication
+alert tcp any any -> any any (msg:"Potential Steganographic C2 Communication"; \
+    content:"steganography"; \
+    content:"hidden"; \
+    dsize:>1000; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000017; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# DNS Queries for GAN Infrastructure
+alert dns any any -> any any (msg:"DNS Query for GAN Infrastructure"; \
+    dns_query; \
+    pcre:"/gan.*cyber.*range|attack.*generator|synthetic.*malware/i"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000018; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Payload Variant Generation
+alert http any any -> any any (msg:"Payload Variant Generation"; \
+    content:"POST"; http_method; \
+    content:"generate_payload_variants"; \
+    content:"evasion_requirements"; \
+    content:"creative_variants"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000019; rev:1; \
+    metadata:policy balanced-ips drop;)
+
+# Attack Simulation Control
+alert tcp any any -> any any (msg:"Attack Simulation Control Traffic"; \
+    content:"execute_campaign"; \
+    content:"blue_team_enabled"; \
+    content:"record_pcaps"; \
+    reference:url,defensive-security-team.local; \
+    classtype:policy-violation; \
+    sid:1000020; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# High-Frequency Attack Generation
+alert tcp any any -> any 443 (msg:"High Frequency Attack Generation Requests"; \
+    content:"generate"; \
+    threshold:type both, track by_src, count 50, seconds 60; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000021; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Cryptocurrency Mining Detection (GPU Resource Abuse)
+alert tcp any any -> any any (msg:"Potential GPU Resource Abuse for ML Training"; \
+    content:"cuda"; \
+    content:"gpu"; \
+    content:"mining"; \
+    reference:url,defensive-security-team.local; \
+    classtype:policy-violation; \
+    sid:1000022; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Adversarial Sample Communication
+alert http any any -> any any (msg:"Adversarial Sample Exchange"; \
+    content:"POST"; http_method; \
+    content:"adversarial"; \
+    content:"perturbation"; \
+    content:"epsilon"; \
+    reference:url,defensive-security-team.local; \
+    classtype:trojan-activity; \
+    sid:1000023; rev:1; \
+    metadata:policy balanced-ips alert;)
+
+# Model Extraction Attempt
+alert tcp any any -> any any (msg:"AI Model Extraction Attempt"; \
+    content:"extract"; \
+    content:"model"; \
+    content:"weights"; \
+    content:"parameters"; \
+    reference:url,defensive-security-team.local; \
+    classtype:policy-violation; \
+    sid:1000024; rev:1; \
+    metadata:policy balanced-ips drop;)
+
+# Federated Learning Communication
+alert tcp any any -> any any (msg:"Suspicious Federated Learning Communication"; \
+    content:"federated"; \
+    content:"aggregation"; \
+    content:"gradient"; \
+    content:"update"; \
+    reference:url,defensive-security-team.local; \
+    classtype:policy-violation; \
+    sid:1000025; rev:1; \
+    metadata:policy balanced-ips alert;)
