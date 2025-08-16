@@ -1,0 +1,483 @@
+# Sigma Rules for Detecting GAN-Cyber-Range-v2 Activities
+# 
+# Purpose: Defensive detection of adversarial AI attack generation platforms
+# Author: Defensive Security Team
+# Date: 2025-08-16
+#
+# These rules detect activities associated with the GAN-Cyber-Range-v2 platform
+
+---
+title: GAN-Based Attack Generation Detection
+id: 12345678-1234-1234-1234-123456789012
+description: Detects execution of GAN-based attack generation tools
+author: Defensive Security Team
+date: 2025/08/16
+modified: 2025/08/16
+level: critical
+status: stable
+tags:
+    - attack.execution
+    - attack.t1059
+    - adversarial_ai
+    - gan_attacks
+
+logsource:
+    category: process_creation
+    product: windows
+
+detection:
+    selection_gan_execution:
+        CommandLine|contains:
+            - 'AttackGAN'
+            - 'MalwareGAN'
+            - 'generate_malware_samples'
+            - 'synthetic_attacks'
+            - 'attack_gan.generate'
+            - 'diversity_threshold'
+            - 'filter_detectable'
+    
+    selection_torch_ml:
+        CommandLine|contains:
+            - 'torch.randn'
+            - 'nn.LSTM'
+            - 'generator.forward'
+            - 'discriminator.forward'
+            - 'torch.nn.Sequential'
+    
+    selection_python_execution:
+        Image|endswith:
+            - '\python.exe'
+            - '\python3.exe'
+            - '\pythonw.exe'
+    
+    condition: selection_python_execution and (selection_gan_execution or selection_torch_ml)
+
+falsepositives:
+    - Legitimate ML research activities
+    - Security training environments
+    - Academic research
+
+---
+title: Red Team LLM Adversary Execution
+id: 23456789-2345-2345-2345-234567890123
+description: Detects execution of LLM-based red team adversary tools
+author: Defensive Security Team
+date: 2025/08/16
+level: high
+status: stable
+tags:
+    - attack.execution
+    - attack.t1059
+    - ai_adversary
+    - llm_attacks
+
+logsource:
+    category: process_creation
+    product: windows
+
+detection:
+    selection_llm_redteam:
+        CommandLine|contains:
+            - 'RedTeamLLM'
+            - 'generate_attack_plan'
+            - 'adapt_tactics'
+            - 'AdversaryProfile'
+            - 'sophistication_level'
+            - 'generate_social_engineering_campaign'
+            - 'simulate_threat_intelligence'
+    
+    selection_social_engineering:
+        CommandLine|contains:
+            - 'spear_phishing'
+            - 'business_email_compromise'
+            - 'susceptibility_score'
+            - 'generate_se_materials'
+    
+    selection_adaptive_behavior:
+        CommandLine|contains:
+            - 'detection_analysis'
+            - 'blue_team_response'
+            - 'technique_substitutions'
+            - 'defensive_gaps'
+    
+    condition: 1 of selection_*
+
+falsepositives:
+    - Security awareness training
+    - Penetration testing tools
+    - Red team exercises
+
+---
+title: MITRE ATT&CK Technique Automation
+id: 34567890-3456-3456-3456-345678901234
+description: Detects automated execution of multiple MITRE ATT&CK techniques
+author: Defensive Security Team
+date: 2025/08/16
+level: high
+status: stable
+tags:
+    - attack.execution
+    - attack.t1059
+    - mitre_attack
+    - automation
+
+logsource:
+    category: process_creation
+    product: windows
+
+detection:
+    selection_technique_ids:
+        CommandLine|contains:
+            - 'T1078'  # Valid Accounts
+            - 'T1190'  # Exploit Public-Facing Application
+            - 'T1059'  # Command and Scripting Interpreter
+            - 'T1021'  # Remote Services
+            - 'T1110'  # Brute Force
+            - 'T1046'  # Network Service Scanning
+            - 'T1083'  # File and Directory Discovery
+            - 'T1055'  # Process Injection
+    
+    selection_attack_engine:
+        CommandLine|contains:
+            - 'AttackEngine'
+            - 'execute_attack'
+            - 'execute_campaign'
+            - 'attack_templates'
+            - 'success_probability'
+    
+    selection_kill_chain:
+        CommandLine|contains:
+            - 'reconnaissance'
+            - 'weaponization'
+            - 'exploitation'
+            - 'lateral_movement'
+            - 'command_control'
+    
+    condition: selection_attack_engine and (selection_technique_ids or selection_kill_chain)
+
+falsepositives:
+    - Security framework testing
+    - Penetration testing tools
+    - Security research
+
+---
+title: GAN Model Training Detection
+id: 45678901-4567-4567-4567-456789012345
+description: Detects GAN model training activities for attack generation
+author: Defensive Security Team
+date: 2025/08/16
+level: medium
+status: stable
+tags:
+    - attack.execution
+    - machine_learning
+    - gan_training
+
+logsource:
+    category: process_creation
+    product: windows
+
+detection:
+    selection_training:
+        CommandLine|contains:
+            - 'train_discriminator'
+            - 'train_generator'
+            - 'training_history'
+            - 'g_optimizer'
+            - 'd_optimizer'
+            - 'BCELoss'
+    
+    selection_data_processing:
+        CommandLine|contains:
+            - 'AttackVectorizer'
+            - 'vectorize'
+            - 'inverse_transform'
+            - 'embedding_dim'
+            - 'attack_data'
+    
+    selection_model_ops:
+        CommandLine|contains:
+            - 'save_model'
+            - 'load_model'
+            - 'checkpoint'
+            - 'state_dict'
+            - 'privacy_budget'
+    
+    condition: selection_training or (selection_data_processing and selection_model_ops)
+
+falsepositives:
+    - Legitimate AI/ML research
+    - Academic projects
+    - Data science workflows
+
+---
+title: Synthetic Malware Generation
+id: 56789012-5678-5678-5678-567890123456
+description: Detects synthetic malware generation using AI
+author: Defensive Security Team
+date: 2025/08/16
+level: critical
+status: stable
+tags:
+    - attack.execution
+    - synthetic_malware
+    - ai_generation
+
+logsource:
+    category: process_creation
+    product: windows
+
+detection:
+    selection_malware_gen:
+        CommandLine|contains:
+            - 'MalwareGenerator'
+            - 'generate_malware_samples'
+            - 'SyntheticMalware'
+            - 'malware_types'
+            - 'target_families'
+    
+    selection_signatures:
+        CommandLine|contains:
+            - 'MalwareSignature'
+            - 'signature_type'
+            - 'evasion_difficulty'
+            - 'generate_signatures'
+    
+    selection_capabilities:
+        CommandLine|contains:
+            - 'file_encryption'
+            - 'keylogging'
+            - 'remote_access'
+            - 'network_spread'
+            - 'self_replication'
+    
+    condition: selection_malware_gen or (selection_signatures and selection_capabilities)
+
+falsepositives:
+    - Security research
+    - Malware analysis tools
+    - Educational platforms
+
+---
+title: Anti-Analysis and Evasion Techniques
+id: 67890123-6789-6789-6789-678901234567
+description: Detects anti-analysis and evasion technique implementation
+author: Defensive Security Team
+date: 2025/08/16
+level: high
+status: stable
+tags:
+    - attack.defense_evasion
+    - anti_analysis
+    - evasion
+
+logsource:
+    category: process_creation
+    product: windows
+
+detection:
+    selection_anti_analysis:
+        CommandLine|contains:
+            - 'anti_analysis'
+            - 'sandbox_evasion'
+            - 'environment_checks'
+            - 'sleep_timer'
+            - 'vm_detection'
+    
+    selection_obfuscation:
+        CommandLine|contains:
+            - 'steganography'
+            - 'obfuscation'
+            - 'process_hollowing'
+            - 'reflective_dll_loading'
+            - 'dll_side_loading'
+    
+    selection_living_off_land:
+        CommandLine|contains:
+            - 'living_off_land'
+            - 'legitimate_tools'
+            - 'fileless_execution'
+            - 'memory_injection'
+    
+    selection_evasion_params:
+        CommandLine|contains:
+            - 'evasion_technique'
+            - 'stealth_level'
+            - 'detection_difficulty'
+            - 'stealth_requirement'
+    
+    condition: 1 of selection_*
+
+falsepositives:
+    - Security testing tools
+    - Penetration testing
+    - Malware analysis
+
+---
+title: Threat Intelligence Spoofing Detection
+id: 78901234-7890-7890-7890-789012345678
+description: Detects threat intelligence generation and spoofing activities
+author: Defensive Security Team
+date: 2025/08/16
+level: medium
+status: stable
+tags:
+    - attack.execution
+    - threat_intel_manipulation
+    - spoofing
+
+logsource:
+    category: process_creation
+    product: windows
+
+detection:
+    selection_ti_generation:
+        CommandLine|contains:
+            - 'simulate_threat_intelligence'
+            - 'generate_apt_profile'
+            - 'generate_iocs'
+            - 'generate_campaign_history'
+    
+    selection_apt_simulation:
+        CommandLine|contains:
+            - 'apt1'
+            - 'lazarus'
+            - 'fin7'
+            - 'carbanak'
+            - 'actor_name'
+    
+    selection_ioc_types:
+        CommandLine|contains:
+            - 'file_hashes'
+            - 'ip_addresses'
+            - 'domains'
+            - 'mutex_names'
+            - 'registry_keys'
+    
+    condition: selection_ti_generation or (selection_apt_simulation and selection_ioc_types)
+
+falsepositives:
+    - Threat intelligence research
+    - Security training
+    - CTI development
+
+---
+title: High Entropy Network Traffic (GAN Generated)
+id: 89012345-8901-8901-8901-890123456789
+description: Detects high entropy network traffic potentially from GAN-generated attacks
+author: Defensive Security Team
+date: 2025/08/16
+level: medium
+status: experimental
+tags:
+    - attack.command_and_control
+    - network_anomaly
+    - high_entropy
+
+logsource:
+    category: network_traffic
+    product: firewall
+
+detection:
+    selection_entropy:
+        - entropy > 7.5
+        - packet_size > 1000
+    
+    selection_patterns:
+        destination_port:
+            - 8080
+            - 8443
+            - 9999
+    
+    selection_frequency:
+        - connection_frequency > 100  # per hour
+    
+    condition: selection_entropy and (selection_patterns or selection_frequency)
+
+falsepositives:
+    - Encrypted legitimate traffic
+    - VPN connections
+    - Backup operations
+
+---
+title: GPU Utilization Anomaly (ML Training)
+id: 90123456-9012-9012-9012-901234567890
+description: Detects unusual GPU utilization patterns consistent with ML training
+author: Defensive Security Team
+date: 2025/08/16
+level: low
+status: experimental
+tags:
+    - resource_anomaly
+    - gpu_usage
+    - ml_training
+
+logsource:
+    category: system_resource
+    product: windows
+
+detection:
+    selection_gpu:
+        - gpu_utilization > 90
+        - duration > 300  # seconds
+    
+    selection_process:
+        process_name:
+            - 'python.exe'
+            - 'pythonw.exe'
+            - 'jupyter.exe'
+    
+    condition: selection_gpu and selection_process
+
+falsepositives:
+    - Legitimate ML development
+    - Gaming applications
+    - Video processing
+    - Cryptocurrency mining
+
+---
+title: Adaptive Attack Behavior Detection
+id: 01234567-0123-0123-0123-012345678901
+description: Detects adaptive attack behavior and real-time tactical changes
+author: Defensive Security Team
+date: 2025/08/16
+level: high
+status: stable
+tags:
+    - attack.execution
+    - adaptive_behavior
+    - tactical_pivoting
+
+logsource:
+    category: process_creation
+    product: windows
+
+detection:
+    selection_adaptation:
+        CommandLine|contains:
+            - 'detection_analysis'
+            - 'blue_team_response'
+            - 'technique_substitutions'
+            - 'timing_modifications'
+            - 'stealth_enhancements'
+    
+    selection_pivoting:
+        CommandLine|contains:
+            - 'defensive_gaps'
+            - 'alternative_techniques'
+            - 'evasion_requirements'
+            - 'mutation_rate'
+    
+    selection_intelligence:
+        CommandLine|contains:
+            - 'response_time'
+            - 'containment_success'
+            - 'detection_methods'
+            - 'security_controls'
+    
+    condition: selection_adaptation or (selection_pivoting and selection_intelligence)
+
+falsepositives:
+    - Automated penetration testing
+    - Red team exercises
+    - Security assessment tools
