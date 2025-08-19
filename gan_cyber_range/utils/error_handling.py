@@ -195,6 +195,25 @@ class SecurityValidationError(CyberRangeError):
         )
 
 
+class WorkflowError(CyberRangeError):
+    """Errors related to workflow execution"""
+    
+    def __init__(self, message: str, workflow_id: Optional[str] = None, step_id: Optional[str] = None, **kwargs):
+        context = ErrorContext(
+            module="orchestration",
+            function="execute_workflow",
+            additional_info={'workflow_id': workflow_id, 'step_id': step_id}
+        )
+        super().__init__(
+            message=message,
+            error_code="CR_WORKFLOW",
+            severity=ErrorSeverity.MEDIUM,
+            context=context,
+            user_message="Workflow execution failed - check workflow configuration",
+            **kwargs
+        )
+
+
 class ErrorHandler:
     """Centralized error handling and recovery system"""
     

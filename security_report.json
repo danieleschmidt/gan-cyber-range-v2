@@ -1,0 +1,2001 @@
+{
+  "timestamp": "2025-08-19T04:11:05.670228",
+  "summary": {
+    "total_issues": 248,
+    "critical": 0,
+    "high": 37,
+    "medium": 80,
+    "low": 131
+  },
+  "by_type": {
+    "secret": 37,
+    "vulnerability": 79,
+    "configuration": 1,
+    "quality": 131
+  },
+  "issues": [
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./gan_cyber_range/api/auth.py",
+      "line": 316,
+      "severity": "HIGH",
+      "match": "password=\"AdminPass123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./gan_cyber_range/api/auth.py",
+      "line": 326,
+      "severity": "HIGH",
+      "match": "password=\"ResearchPass123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./gan_cyber_range/blue_team/incident_response.py",
+      "line": 50,
+      "severity": "HIGH",
+      "match": "PASSWORD = \"reset_password\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./gan_cyber_range/config/config_manager.py",
+      "line": 465,
+      "severity": "HIGH",
+      "match": "password': 'your_db_password'"
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./gan_cyber_range/config/config_manager.py",
+      "line": 514,
+      "severity": "HIGH",
+      "match": "PASSWORD': 'database.password'"
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./gan_cyber_range/core/cyber_range.py",
+      "line": 428,
+      "severity": "HIGH",
+      "match": "PASSWORD': 'admin123'"
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./k8s/secrets.yaml",
+      "line": 13,
+      "severity": "HIGH",
+      "match": "PASSWORD: \"SecureDBPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./k8s/secrets.yaml",
+      "line": 17,
+      "severity": "HIGH",
+      "match": "PASSWORD: \"SecureRedisPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./k8s/secrets.yaml",
+      "line": 30,
+      "severity": "HIGH",
+      "match": "PASSWORD: \"AdminSecurePass123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./k8s/secrets.yaml",
+      "line": 88,
+      "severity": "HIGH",
+      "match": "password\": \"registry_password\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./k8s/secrets.yaml",
+      "line": 93,
+      "severity": "HIGH",
+      "match": "password\": \"github_token\""
+    },
+    {
+      "type": "secret",
+      "pattern": "token",
+      "file": "./k8s/secrets.yaml",
+      "line": 26,
+      "severity": "HIGH",
+      "match": "TOKEN: \"your-huggingface-token"
+    },
+    {
+      "type": "secret",
+      "pattern": "token",
+      "file": "./k8s/secrets.yaml",
+      "line": 89,
+      "severity": "HIGH",
+      "match": "auth\": \"base64-encoded-credentials"
+    },
+    {
+      "type": "secret",
+      "pattern": "token",
+      "file": "./k8s/secrets.yaml",
+      "line": 94,
+      "severity": "HIGH",
+      "match": "auth\": \"base64-encoded-credentials"
+    },
+    {
+      "type": "secret",
+      "pattern": "secret",
+      "file": "./k8s/secrets.yaml",
+      "line": 21,
+      "severity": "HIGH",
+      "match": "SECRET: \"super-secret-jwt-key-change-in-production..."
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_api.py",
+      "line": 46,
+      "severity": "HIGH",
+      "match": "password\": \"TestPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_api.py",
+      "line": 65,
+      "severity": "HIGH",
+      "match": "password\": \"AdminPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_api.py",
+      "line": 126,
+      "severity": "HIGH",
+      "match": "password\": \"NewPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_api.py",
+      "line": 147,
+      "severity": "HIGH",
+      "match": "password\": \"Password123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_api.py",
+      "line": 158,
+      "severity": "HIGH",
+      "match": "password\": \"TestPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_api.py",
+      "line": 173,
+      "severity": "HIGH",
+      "match": "password\": \"WrongPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_api.py",
+      "line": 243,
+      "severity": "HIGH",
+      "match": "password\": \"Password123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_api.py",
+      "line": 483,
+      "severity": "HIGH",
+      "match": "password\": \"Password123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_integration.py",
+      "line": 42,
+      "severity": "HIGH",
+      "match": "password\": \"ResearchPass123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_integration.py",
+      "line": 54,
+      "severity": "HIGH",
+      "match": "password\": \"AdminPass123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_integration.py",
+      "line": 588,
+      "severity": "HIGH",
+      "match": "password\": \"E2EPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 41,
+      "severity": "HIGH",
+      "match": "password\": \"SecurePassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 64,
+      "severity": "HIGH",
+      "match": "password = \"TestPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 126,
+      "severity": "HIGH",
+      "match": "password\": \"wrongpassword\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 134,
+      "severity": "HIGH",
+      "match": "password\": \"AdminPass123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 171,
+      "severity": "HIGH",
+      "match": "password\": \"Password123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 252,
+      "severity": "HIGH",
+      "match": "password\": \"Password123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 295,
+      "severity": "HIGH",
+      "match": "password\": \"Password123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 317,
+      "severity": "HIGH",
+      "match": "password\": \"SecretPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 334,
+      "severity": "HIGH",
+      "match": "password\": \"LogTestPassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "password",
+      "file": "./tests/test_security.py",
+      "line": 460,
+      "severity": "HIGH",
+      "match": "password\": \"SecurePassword123!\""
+    },
+    {
+      "type": "secret",
+      "pattern": "token",
+      "file": "./tests/test_security.py",
+      "line": 114,
+      "severity": "HIGH",
+      "match": "token = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./conftest.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./deployment_guide.py",
+      "line": 220,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./production_deployment_guide.py",
+      "line": 5,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./examples/advanced_research_example.py",
+      "line": 352,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "hardcoded_password",
+      "file": "./gan_cyber_range/api/auth.py",
+      "line": 316,
+      "severity": "MEDIUM",
+      "match": "password=\"AdminPass123!\""
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "hardcoded_password",
+      "file": "./gan_cyber_range/api/auth.py",
+      "line": 326,
+      "severity": "MEDIUM",
+      "match": "password=\"ResearchPass123!\""
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/api/demo_api.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/blue_team/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/blue_team/defense_suite.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "hardcoded_password",
+      "file": "./gan_cyber_range/blue_team/incident_response.py",
+      "line": 50,
+      "severity": "MEDIUM",
+      "match": "PASSWORD = \"reset_password\""
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/blue_team/incident_response.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/cli/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/cli/main.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/compliance/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/compliance/global_compliance_manager.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/config/config_manager.py",
+      "line": 278,
+      "severity": "MEDIUM",
+      "match": "md5("
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/config/config_manager.py",
+      "line": 343,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/config/config_manager.py",
+      "line": 348,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/core/attack_engine.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/core/cyber_range.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/core/network_sim.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/core/minimal_requirements.py",
+      "line": 3,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/evaluation/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/evaluation/attack_evaluator.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/evaluation/blue_team_evaluator.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/evaluation/training_evaluator.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/factories/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/factories/range_factory.py",
+      "line": 471,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/factories/range_factory.py",
+      "line": 473,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/generators/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/internationalization/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/internationalization/localization_manager.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/monitoring/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/monitoring/metrics_collector.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 615,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 632,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 668,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 703,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 817,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 821,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 823,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 828,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 830,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 867,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 886,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 930,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/enhanced_performance.py",
+      "line": 645,
+      "severity": "MEDIUM",
+      "match": "md5("
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/optimization/query_optimizer.py",
+      "line": 200,
+      "severity": "MEDIUM",
+      "match": "md5("
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/orchestration/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/research/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/research/baseline_comparator.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/research/experiment_framework.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/research/experiment_framework.py",
+      "line": 275,
+      "severity": "MEDIUM",
+      "match": "md5("
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/research/statistical_validator.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/scalability/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/scalability/auto_scaler.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/security/__init__.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/auto_scaling.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/caching.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/caching.py",
+      "line": 595,
+      "severity": "MEDIUM",
+      "match": "md5("
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "unsafe_pickle",
+      "file": "./gan_cyber_range/utils/caching.py",
+      "line": 258,
+      "severity": "MEDIUM",
+      "match": "pickle.loads("
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/comprehensive_monitoring.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/enhanced_security.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/error_handling.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/logging_config.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/monitoring.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/monitoring.py",
+      "line": 487,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/optimization.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/security.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/security.py",
+      "line": 488,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/security.py",
+      "line": 597,
+      "severity": "MEDIUM",
+      "match": "md5("
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/security.py",
+      "line": 758,
+      "severity": "MEDIUM",
+      "match": "md5("
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./gan_cyber_range/utils/validation.py",
+      "line": 4,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "hardcoded_password",
+      "file": "./tests/test_security.py",
+      "line": 64,
+      "severity": "MEDIUM",
+      "match": "password = \"TestPassword123!\""
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./tests/test_security.py",
+      "line": 407,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./tests/test_security.py",
+      "line": 410,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "vulnerability",
+      "pattern": "weak_crypto",
+      "file": "./tests/test_security.py",
+      "line": 411,
+      "severity": "MEDIUM",
+      "match": "des"
+    },
+    {
+      "type": "configuration",
+      "pattern": "default_password",
+      "file": "./k8s/secrets.yaml",
+      "line": 30,
+      "severity": "MEDIUM",
+      "match": "PASSWORD: \"Admin"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./deployment_guide.py",
+      "line": 97,
+      "severity": "LOW",
+      "message": "Function _create_docker_compose has 101 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./deployment_guide.py",
+      "line": 198,
+      "severity": "LOW",
+      "message": "Function _create_deployment_script has 87 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./deployment_guide.py",
+      "line": 414,
+      "severity": "LOW",
+      "message": "Function _create_production_config has 51 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./deployment_guide.py",
+      "line": 465,
+      "severity": "LOW",
+      "message": "Function _create_nginx_config has 81 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./deployment_guide.py",
+      "line": 611,
+      "severity": "LOW",
+      "message": "Function generate_deployment_checklist has 71 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./performance_benchmark.py",
+      "line": 158,
+      "severity": "LOW",
+      "message": "Function benchmark_cyber_range has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./performance_benchmark.py",
+      "line": 210,
+      "severity": "LOW",
+      "message": "Function benchmark_api_performance has 59 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./performance_benchmark.py",
+      "line": 412,
+      "severity": "LOW",
+      "message": "Function generate_attacks_process has 51 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./performance_benchmark.py",
+      "line": 463,
+      "severity": "LOW",
+      "message": "Function benchmark_stress_test has 65 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "large_file",
+      "file": "./production_deployment_guide.py",
+      "severity": "LOW",
+      "message": "File has 1132 lines (>1000)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./production_deployment_guide.py",
+      "line": 110,
+      "severity": "LOW",
+      "message": "Function deploy_to_production has 83 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./production_deployment_guide.py",
+      "line": 234,
+      "severity": "LOW",
+      "message": "Function _create_default_config has 61 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./production_deployment_guide.py",
+      "line": 426,
+      "severity": "LOW",
+      "message": "Function _generate_api_deployment has 66 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./production_deployment_guide.py",
+      "line": 950,
+      "severity": "LOW",
+      "message": "Function _generate_deployment_docs has 61 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./security_scanner.py",
+      "line": 60,
+      "severity": "LOW",
+      "message": "Function __init__ has 96 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./test_runner_minimal.py",
+      "line": 17,
+      "severity": "LOW",
+      "message": "Function test_security_orchestrator_minimal has 78 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./test_runner_simple.py",
+      "line": 193,
+      "severity": "LOW",
+      "message": "Function test_localization_manager has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./test_structure_validation.py",
+      "line": 130,
+      "severity": "LOW",
+      "message": "Function extract_imports has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./run_comprehensive_tests.py",
+      "line": 193,
+      "severity": "LOW",
+      "message": "Function run_all_tests has 134 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./simple_test_runner.py",
+      "line": 10,
+      "severity": "LOW",
+      "message": "Function run_basic_tests has 163 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./security_quality_gates.py",
+      "line": 110,
+      "severity": "LOW",
+      "message": "Function check_code_quality has 93 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./examples/advanced_research_example.py",
+      "line": 63,
+      "severity": "LOW",
+      "message": "Function run_gan_effectiveness_study has 59 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./examples/advanced_research_example.py",
+      "line": 122,
+      "severity": "LOW",
+      "message": "Function run_red_team_adaptation_study has 67 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./examples/advanced_research_example.py",
+      "line": 189,
+      "severity": "LOW",
+      "message": "Function run_network_complexity_analysis has 53 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./examples/advanced_research_example.py",
+      "line": 278,
+      "severity": "LOW",
+      "message": "Function generate_research_report has 91 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/api/demo_api.py",
+      "line": 357,
+      "severity": "LOW",
+      "message": "Function generate_attacks has 58 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/api/main.py",
+      "line": 50,
+      "severity": "LOW",
+      "message": "Function lifespan has 59 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/api/main.py",
+      "line": 314,
+      "severity": "LOW",
+      "message": "Function generate_attacks has 69 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/api/main.py",
+      "line": 383,
+      "severity": "LOW",
+      "message": "Function create_cyber_range has 63 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/api/main.py",
+      "line": 579,
+      "severity": "LOW",
+      "message": "Function create_attack_campaign has 70 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/blue_team/defense_suite.py",
+      "line": 143,
+      "severity": "LOW",
+      "message": "Function _load_default_rules has 53 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/blue_team/defense_suite.py",
+      "line": 435,
+      "severity": "LOW",
+      "message": "Function _load_behavioral_rules has 51 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/blue_team/incident_response.py",
+      "line": 362,
+      "severity": "LOW",
+      "message": "Function _load_default_playbooks has 120 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/blue_team/incident_response.py",
+      "line": 604,
+      "severity": "LOW",
+      "message": "Function execute_response_action has 59 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/cli/main.py",
+      "line": 63,
+      "severity": "LOW",
+      "message": "Function create_topology has 67 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/cli/main.py",
+      "line": 130,
+      "severity": "LOW",
+      "message": "Function deploy has 89 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/cli/main.py",
+      "line": 256,
+      "severity": "LOW",
+      "message": "Function progress_callback has 64 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/cli/main.py",
+      "line": 320,
+      "severity": "LOW",
+      "message": "Function scenario has 61 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/compliance/global_compliance_manager.py",
+      "line": 188,
+      "severity": "LOW",
+      "message": "Function conduct_compliance_assessment has 76 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/compliance/global_compliance_manager.py",
+      "line": 274,
+      "severity": "LOW",
+      "message": "Function check_cross_border_transfer_compliance has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/compliance/global_compliance_manager.py",
+      "line": 326,
+      "severity": "LOW",
+      "message": "Function generate_compliance_report has 81 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/compliance/global_compliance_manager.py",
+      "line": 452,
+      "severity": "LOW",
+      "message": "Function auto_remediate_compliance_issues has 54 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/compliance/global_compliance_manager.py",
+      "line": 522,
+      "severity": "LOW",
+      "message": "Function _initialize_requirements has 66 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/config/config_manager.py",
+      "line": 413,
+      "severity": "LOW",
+      "message": "Function create_default_configs has 61 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/core/attack_engine.py",
+      "line": 197,
+      "severity": "LOW",
+      "message": "Function _execute_attack_step has 61 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/core/attack_engine.py",
+      "line": 534,
+      "severity": "LOW",
+      "message": "Function _generate_detection_events has 55 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/core/attack_engine.py",
+      "line": 602,
+      "severity": "LOW",
+      "message": "Function _load_default_templates has 54 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/core/attack_gan.py",
+      "line": 196,
+      "severity": "LOW",
+      "message": "Function train has 55 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/core/cyber_range.py",
+      "line": 120,
+      "severity": "LOW",
+      "message": "Function deploy has 53 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/core/network_sim.py",
+      "line": 375,
+      "severity": "LOW",
+      "message": "Function _generate_hosts_for_subnet has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/db/database.py",
+      "line": 46,
+      "severity": "LOW",
+      "message": "Function initialize has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/evaluation/attack_evaluator.py",
+      "line": 414,
+      "severity": "LOW",
+      "message": "Function evaluate has 70 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/evaluation/training_evaluator.py",
+      "line": 239,
+      "severity": "LOW",
+      "message": "Function _simulate_team_assessment has 66 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/evaluation/training_evaluator.py",
+      "line": 355,
+      "severity": "LOW",
+      "message": "Function _statistical_analysis has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/evaluation/training_evaluator.py",
+      "line": 407,
+      "severity": "LOW",
+      "message": "Function _generate_area_recommendation has 58 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/factories/network_factory.py",
+      "line": 229,
+      "severity": "LOW",
+      "message": "Function create_attack_scenario_topology has 55 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/factories/training_factory.py",
+      "line": 271,
+      "severity": "LOW",
+      "message": "Function create_scenario_based_training has 61 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/factories/training_factory.py",
+      "line": 332,
+      "severity": "LOW",
+      "message": "Function create_certification_track has 62 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/malware_gan.py",
+      "line": 204,
+      "severity": "LOW",
+      "message": "Function train has 57 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/network_gan.py",
+      "line": 189,
+      "severity": "LOW",
+      "message": "Function train has 61 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/social_gan.py",
+      "line": 272,
+      "severity": "LOW",
+      "message": "Function __init__ has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/social_gan.py",
+      "line": 365,
+      "severity": "LOW",
+      "message": "Function _create_phishing_campaign has 63 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/social_gan.py",
+      "line": 428,
+      "severity": "LOW",
+      "message": "Function _build_social_engineering_vocab has 56 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/web_attack_gan.py",
+      "line": 88,
+      "severity": "LOW",
+      "message": "Function forward has 61 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/web_attack_gan.py",
+      "line": 205,
+      "severity": "LOW",
+      "message": "Function __init__ has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/web_attack_gan.py",
+      "line": 257,
+      "severity": "LOW",
+      "message": "Function train has 65 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/web_attack_gan.py",
+      "line": 408,
+      "severity": "LOW",
+      "message": "Function _build_web_attack_vocab has 59 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/generators/web_attack_gan.py",
+      "line": 523,
+      "severity": "LOW",
+      "message": "Function _create_attack_session has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/internationalization/localization_manager.py",
+      "line": 337,
+      "severity": "LOW",
+      "message": "Function export_translations has 56 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/internationalization/localization_manager.py",
+      "line": 566,
+      "severity": "LOW",
+      "message": "Function _initialize_supported_locales has 80 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/optimization/advanced_performance.py",
+      "line": 530,
+      "severity": "LOW",
+      "message": "Function _maintain_pool has 54 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/optimization/query_optimizer.py",
+      "line": 218,
+      "severity": "LOW",
+      "message": "Function _extract_operations has 56 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/optimization/resource_pool.py",
+      "line": 119,
+      "severity": "LOW",
+      "message": "Function acquire has 94 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/optimization/resource_pool.py",
+      "line": 255,
+      "severity": "LOW",
+      "message": "Function _perform_maintenance has 57 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/optimization/high_performance_computing.py",
+      "line": 462,
+      "severity": "LOW",
+      "message": "Function benchmark_operation has 51 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/optimization/high_performance_computing.py",
+      "line": 619,
+      "severity": "LOW",
+      "message": "Function _grid_search has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/pipeline_manager.py",
+      "line": 165,
+      "severity": "LOW",
+      "message": "Function create_pipeline has 57 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/pipeline_manager.py",
+      "line": 222,
+      "severity": "LOW",
+      "message": "Function execute_pipeline has 77 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/pipeline_manager.py",
+      "line": 349,
+      "severity": "LOW",
+      "message": "Function create_research_pipeline has 86 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/pipeline_manager.py",
+      "line": 455,
+      "severity": "LOW",
+      "message": "Function get_execution_analytics has 51 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/scenario_orchestrator.py",
+      "line": 199,
+      "severity": "LOW",
+      "message": "Function execute_scenario has 64 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/scenario_orchestrator.py",
+      "line": 407,
+      "severity": "LOW",
+      "message": "Function _create_scenario_workflow has 77 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/workflow_engine.py",
+      "line": 219,
+      "severity": "LOW",
+      "message": "Function execute_workflow has 109 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/workflow_engine.py",
+      "line": 407,
+      "severity": "LOW",
+      "message": "Function _execute_step_with_retries has 90 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/orchestration/workflow_engine.py",
+      "line": 525,
+      "severity": "LOW",
+      "message": "Function create_training_workflow has 57 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/red_team/llm_adversary.py",
+      "line": 370,
+      "severity": "LOW",
+      "message": "Function _generate_attack_phases has 59 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/baseline_comparator.py",
+      "line": 340,
+      "severity": "LOW",
+      "message": "Function validate_improvement_claims has 62 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/baseline_comparator.py",
+      "line": 408,
+      "severity": "LOW",
+      "message": "Function _perform_single_comparison has 71 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/baseline_comparator.py",
+      "line": 668,
+      "severity": "LOW",
+      "message": "Function _generate_performance_rankings has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/experiment_framework.py",
+      "line": 543,
+      "severity": "LOW",
+      "message": "Function _generate_recommendations has 57 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/statistical_validator.py",
+      "line": 246,
+      "severity": "LOW",
+      "message": "Function _two_group_test has 67 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/statistical_validator.py",
+      "line": 313,
+      "severity": "LOW",
+      "message": "Function _multi_group_test has 63 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/statistical_validator.py",
+      "line": 416,
+      "severity": "LOW",
+      "message": "Function _perform_power_analysis has 59 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/statistical_validator.py",
+      "line": 534,
+      "severity": "LOW",
+      "message": "Function _perform_non_parametric_tests has 63 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/research/statistical_validator.py",
+      "line": 676,
+      "severity": "LOW",
+      "message": "Function _generate_validation_summary has 56 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/scalability/auto_scaler.py",
+      "line": 284,
+      "severity": "LOW",
+      "message": "Function make_scaling_decision has 97 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/scalability/auto_scaler.py",
+      "line": 499,
+      "severity": "LOW",
+      "message": "Function optimize_policies has 62 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/security/security_orchestrator.py",
+      "line": 178,
+      "severity": "LOW",
+      "message": "Function create_security_context has 62 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/security/security_orchestrator.py",
+      "line": 240,
+      "severity": "LOW",
+      "message": "Function validate_operation has 83 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/security/security_orchestrator.py",
+      "line": 402,
+      "severity": "LOW",
+      "message": "Function generate_security_report has 54 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/auto_scaling.py",
+      "line": 313,
+      "severity": "LOW",
+      "message": "Function execute_scaling_action has 76 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/auto_scaling.py",
+      "line": 517,
+      "severity": "LOW",
+      "message": "Function _load_default_policies has 71 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/comprehensive_monitoring.py",
+      "line": 344,
+      "severity": "LOW",
+      "message": "Function _evaluate_single_rule has 55 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/logging_config.py",
+      "line": 199,
+      "severity": "LOW",
+      "message": "Function setup_logging has 133 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/performance.py",
+      "line": 289,
+      "severity": "LOW",
+      "message": "Function optimize_pytorch_model has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/scaling.py",
+      "line": 277,
+      "severity": "LOW",
+      "message": "Function _make_scaling_decisions has 73 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/scaling.py",
+      "line": 492,
+      "severity": "LOW",
+      "message": "Function create_horizontal_pod_autoscaler has 53 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "large_file",
+      "file": "./gan_cyber_range/utils/security.py",
+      "severity": "LOW",
+      "message": "File has 1053 lines (>1000)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/validation.py",
+      "line": 106,
+      "severity": "LOW",
+      "message": "Function _validate_field has 55 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/utils/validation.py",
+      "line": 565,
+      "severity": "LOW",
+      "message": "Function validate_config has 57 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/testing/comprehensive_test_framework.py",
+      "line": 106,
+      "severity": "LOW",
+      "message": "Function run_test has 60 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/testing/comprehensive_test_framework.py",
+      "line": 446,
+      "severity": "LOW",
+      "message": "Function simulate_user has 65 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/testing/comprehensive_test_framework.py",
+      "line": 542,
+      "severity": "LOW",
+      "message": "Function run_input_validation_test has 62 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./gan_cyber_range/testing/comprehensive_test_framework.py",
+      "line": 604,
+      "severity": "LOW",
+      "message": "Function run_authentication_test has 56 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_advanced_scenarios.py",
+      "line": 40,
+      "severity": "LOW",
+      "message": "Function test_apt_campaign_simulation_scenario has 92 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_advanced_scenarios.py",
+      "line": 132,
+      "severity": "LOW",
+      "message": "Function test_incident_response_tabletop_exercise has 83 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_advanced_scenarios.py",
+      "line": 215,
+      "severity": "LOW",
+      "message": "Function test_threat_hunting_competition has 80 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_advanced_scenarios.py",
+      "line": 295,
+      "severity": "LOW",
+      "message": "Function test_multi_domain_training_program_creation has 62 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_advanced_scenarios.py",
+      "line": 357,
+      "severity": "LOW",
+      "message": "Function test_purple_team_collaborative_exercise has 106 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_advanced_scenarios.py",
+      "line": 463,
+      "severity": "LOW",
+      "message": "Function test_certification_preparation_pipeline has 59 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_integration.py",
+      "line": 77,
+      "severity": "LOW",
+      "message": "Function test_complete_attack_generation_workflow has 75 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_integration.py",
+      "line": 202,
+      "severity": "LOW",
+      "message": "Function test_multi_user_collaboration has 53 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_integration.py",
+      "line": 296,
+      "severity": "LOW",
+      "message": "Function test_red_team_llm_integration has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_performance_benchmarks.py",
+      "line": 245,
+      "severity": "LOW",
+      "message": "Function test_training_factory_program_generation_performance has 54 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_performance_benchmarks.py",
+      "line": 299,
+      "severity": "LOW",
+      "message": "Function test_scenario_orchestrator_event_processing_performance has 51 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_performance_benchmarks.py",
+      "line": 350,
+      "severity": "LOW",
+      "message": "Function test_security_validation_performance has 52 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_performance_benchmarks.py",
+      "line": 402,
+      "severity": "LOW",
+      "message": "Function test_component_integration_performance has 56 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_performance_benchmarks.py",
+      "line": 458,
+      "severity": "LOW",
+      "message": "Function test_memory_usage_patterns has 54 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_performance_benchmarks.py",
+      "line": 521,
+      "severity": "LOW",
+      "message": "Function concurrent_handler has 56 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_research_framework.py",
+      "line": 493,
+      "severity": "LOW",
+      "message": "Function test_comprehensive_comparison has 74 lines (>50)"
+    },
+    {
+      "type": "quality",
+      "pattern": "long_function",
+      "file": "./tests/test_security_framework.py",
+      "line": 512,
+      "severity": "LOW",
+      "message": "Function test_complete_security_workflow has 71 lines (>50)"
+    }
+  ],
+  "security_score": 0
+}

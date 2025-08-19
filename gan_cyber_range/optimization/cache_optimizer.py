@@ -25,6 +25,13 @@ class CacheStrategy(Enum):
     FIFO = "fifo"
     ADAPTIVE = "adaptive"
     INTELLIGENT = "intelligent"
+        
+    @classmethod
+    def create(cls, strategy_name: str, **kwargs):
+        """Create cache strategy with parameters"""
+        if strategy_name.upper() in [s.name for s in cls]:
+            return cls[strategy_name.upper()]
+        return cls.LRU
 
 
 class CacheLevel(Enum):

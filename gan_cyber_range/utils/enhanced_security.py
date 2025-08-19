@@ -36,6 +36,14 @@ class ThreatLevel(Enum):
     CRITICAL = "critical"
 
 
+class SecurityLevel(Enum):
+    """Security access levels"""
+    PUBLIC = "public"
+    RESTRICTED = "restricted"
+    CONFIDENTIAL = "confidential"
+    SECRET = "secret"
+
+
 class SecurityEventType(Enum):
     """Types of security events"""
     AUTHENTICATION_FAILURE = "auth_failure"
@@ -107,7 +115,7 @@ class SecureInputValidator:
             'general': 500
         }
     
-    def validate_input(self, input_value: str, input_type: str = 'general') -> Dict[str, Any]:
+    def validate_input(self, input_value: str, input_type: str = 'general', client_id: str = 'unknown') -> Dict[str, Any]:
         """Comprehensive input validation"""
         validation_result = {
             'is_valid': True,
@@ -150,12 +158,13 @@ class SecureInputValidator:
         
         return sanitized
     
-    def validate_attack_config(self, config: Dict[str, Any]) -> Dict[str, Any]:
+    def validate_attack_config(self, config: Dict[str, Any], client_id: str = 'unknown') -> Dict[str, Any]:
         """Validate attack configuration for safety"""
         validation_result = {
             'is_safe': True,
             'issues': [],
-            'sanitized_config': config.copy()
+            'sanitized_config': config.copy(),
+            'threat_level': ThreatLevel.LOW
         }
         
         # Check for production system targets
@@ -504,12 +513,91 @@ class SecureDataManager:
             return False
 
 
+# Ethical framework implementation
+class EthicalFramework:
+    """Ethical usage enforcement framework"""
+    
+    def __init__(self, allowed_uses: List[str] = None, prohibited_targets: List[str] = None, require_consent: bool = True):
+        self.allowed_uses = allowed_uses or ["research", "training", "defense", "education"]
+        self.prohibited_targets = prohibited_targets or ["production_systems", "real_networks"]
+        self.require_consent = require_consent
+        
+    def is_compliant(self, request: Dict[str, Any]) -> bool:
+        """Check if request complies with ethical guidelines"""
+        purpose = request.get('purpose', 'unknown')
+        target = request.get('target', '')
+        
+        # Check purpose compliance
+        if purpose not in self.allowed_uses:
+            return False
+            
+        # Check target compliance
+        for prohibited in self.prohibited_targets:
+            if prohibited in target.lower():
+                return False
+                
+        return True
+
+
+class Containment:
+    """Security containment implementation"""
+    
+    def __init__(self, network_isolation: str = "strict", outbound_filtering: bool = True, killswitch_enabled: bool = True):
+        self.network_isolation = network_isolation
+        self.outbound_filtering = outbound_filtering
+        self.killswitch_enabled = killswitch_enabled
+        
+    def contained(self, func):
+        """Decorator for contained execution"""
+        def wrapper(*args, **kwargs):
+            logger.info(f"Executing {func.__name__} with containment")
+            return func(*args, **kwargs)
+        return wrapper
+
+
+def validate_input(input_value: str, input_type: str = 'general', client_id: str = 'unknown') -> bool:
+    """Global input validation function"""
+    result = input_validator.validate_input(input_value, input_type, client_id)
+    return result['is_valid']
+
+
 # Global security components
 input_validator = SecureInputValidator()
 threat_detector = ThreatDetectionEngine()
 containment_engine = ContainmentEngine()
 audit_logger = SecurityAuditLogger()
 data_manager = SecureDataManager()
+
+
+def secure_hash(data: str, salt: str = None) -> str:
+    """Global secure hash function"""
+    return data_manager.secure_hash(data, salt)
+ethical_framework = EthicalFramework()
+containment = Containment()
+
+
+class UsageMonitor:
+    """Monitor usage for ethical compliance"""
+    
+    def __init__(self, ethical_framework):
+        self.ethical_framework = ethical_framework
+        self.usage_log = []
+        
+    def log_usage(self, user: str, purpose: str, timestamp):
+        """Log usage event"""
+        self.usage_log.append({
+            'user': user,
+            'purpose': purpose,
+            'timestamp': timestamp
+        })
+        
+    def before_attack_generation(self, func):
+        """Decorator for pre-generation checks"""
+        def wrapper(request):
+            if not self.ethical_framework.is_compliant(request):
+                raise ValueError(f"Ethical violation: {request}")
+            return func(request)
+        return wrapper
 
 
 def create_security_event(
