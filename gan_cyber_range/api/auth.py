@@ -309,21 +309,23 @@ def initialize_default_users():
     """Initialize default users for development"""
     if not USERS_DB:
         try:
-            # Create default admin user
+            # Create default admin user with environment-based password
+            admin_password = os.getenv("ADMIN_DEFAULT_PASSWORD", "CHANGE_ME_IMMEDIATELY")
             user_manager.create_user(
                 username="admin",
                 email="admin@terragonlabs.com",
-                password="AdminPass123!",
+                password=admin_password,
                 full_name="System Administrator",
                 organization="Terragon Labs",
                 role="admin"
             )
             
-            # Create default researcher user
+            # Create default researcher user with environment-based password
+            researcher_password = os.getenv("RESEARCHER_DEFAULT_PASSWORD", "CHANGE_ME_IMMEDIATELY")
             user_manager.create_user(
                 username="researcher",
                 email="researcher@terragonlabs.com", 
-                password="ResearchPass123!",
+                password=researcher_password,
                 full_name="Research User",
                 organization="Terragon Labs",
                 role="researcher"
