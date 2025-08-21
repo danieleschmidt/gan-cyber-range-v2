@@ -1,0 +1,72 @@
+{
+  "total_gates": 10,
+  "passed_gates": 8,
+  "failed_gates": 2,
+  "pass_rate": 0.8,
+  "overall_score": 95.0,
+  "overall_pass": true,
+  "execution_time": 0.5251038074493408,
+  "timestamp": "2025-08-21T12:02:12.247648",
+  "results": [
+    {
+      "name": "Code Functionality",
+      "passed": true,
+      "score": 100.0,
+      "time": 0.10362672805786133
+    },
+    {
+      "name": "Security Scan",
+      "passed": false,
+      "score": 55.0,
+      "time": 0.24853873252868652
+    },
+    {
+      "name": "Performance Benchmarks",
+      "passed": true,
+      "score": 100.0,
+      "time": 0.00467371940612793
+    },
+    {
+      "name": "Error Handling",
+      "passed": true,
+      "score": 100.0,
+      "time": 0.0007891654968261719
+    },
+    {
+      "name": "Documentation",
+      "passed": false,
+      "score": 95.0,
+      "time": 0.003940105438232422
+    },
+    {
+      "name": "API Compliance",
+      "passed": true,
+      "score": 100.0,
+      "time": 0.043067216873168945
+    },
+    {
+      "name": "Data Integrity",
+      "passed": true,
+      "score": 100.0,
+      "time": 0.002483367919921875
+    },
+    {
+      "name": "Resource Management",
+      "passed": true,
+      "score": 100.0,
+      "time": 0.04825544357299805
+    },
+    {
+      "name": "Scalability",
+      "passed": true,
+      "score": 100.0,
+      "time": 0.06685233116149902
+    },
+    {
+      "name": "Production Readiness",
+      "passed": true,
+      "score": 100.0,
+      "time": 0.0025277137756347656
+    }
+  ]
+}
