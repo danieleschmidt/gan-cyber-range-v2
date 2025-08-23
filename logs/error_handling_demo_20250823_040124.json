@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-08-23T04:01:24.859006",
+  "statistics": {
+    "total_errors": 10,
+    "recent_errors": 10,
+    "category_distribution": {
+      "network": 1,
+      "external_service": 9
+    },
+    "severity_distribution": {
+      "medium": 10
+    },
+    "recovery_attempts": 1,
+    "successful_recoveries": 1,
+    "recovery_rate_percent": 100.0,
+    "circuit_breakers": {
+      "demo_service": "open"
+    }
+  },
+  "error_history": [
+    {
+      "error_id": "87f2a3c1edb8",
+      "timestamp": "2025-08-23T04:01:09.436799",
+      "category": "network",
+      "severity": "medium",
+      "recovery_successful": true
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:12.341201",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:13.843049",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:15.345090",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:16.847123",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:18.348714",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:19.850403",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:21.353584",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:22.855566",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    },
+    {
+      "error_id": "6f32add261cf",
+      "timestamp": "2025-08-23T04:01:24.357432",
+      "category": "external_service",
+      "severity": "medium",
+      "recovery_successful": false
+    }
+  ]
+}

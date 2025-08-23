@@ -1,0 +1,33 @@
+{
+  "report_id": "RPT-202508230358",
+  "generated_at": "2025-08-23T03:58:23.985574",
+  "report_type": "defensive_training_summary",
+  "statistics": {
+    "signatures_created": 4,
+    "threats_detected": 4,
+    "training_scenarios": 4,
+    "avg_detection_confidence": 0.85
+  },
+  "defensive_capabilities": [
+    "Real-time threat monitoring",
+    "Automated incident response",
+    "Security training scenarios",
+    "Threat signature management"
+  ],
+  "recommendations": [
+    "Continue regular security training exercises",
+    "Update threat signatures based on latest intelligence",
+    "Enhance monitoring capabilities for early detection"
+  ],
+  "session_id": "SESSION-20250823035819",
+  "training_effectiveness": {
+    "scenarios_completed": 4,
+    "threats_successfully_detected": 3,
+    "defensive_skills_practiced": [
+      "Threat signature creation",
+      "Real-time monitoring",
+      "Incident response",
+      "Training scenario development"
+    ]
+  }
+}

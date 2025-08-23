@@ -1,0 +1,169 @@
+{
+  "report_timestamp": "2025-08-23T04:07:58.299808",
+  "overall_status": "FAILED",
+  "overall_success_rate": 78.69,
+  "gate_summary": {
+    "total_gates": 3,
+    "passed": 2,
+    "warnings": 0,
+    "failed": 1
+  },
+  "individual_results": {
+    "security": {
+      "gate_name": "Security Validation",
+      "status": "failed",
+      "score": 326.66666666666663,
+      "max_score": 600.0,
+      "details": {
+        "defensive_mode_validation": {
+          "score": 40.0,
+          "details": {
+            "defensive_mode": "\u2705 Enabled",
+            "research_only": "\u26a0\ufe0f  Research mode not specified",
+            "authorized_use": "\u274c Authorized use not confirmed"
+          }
+        },
+        "configuration_security": {
+          "score": 0.0,
+          "details": {
+            "configs/defensive/config.json": "\u26a0\ufe0f  World-readable",
+            "configs/defensive/config.json_security": "\u2705 No obvious sensitive data",
+            "summary": "Secure configs: 0/1"
+          }
+        },
+        "file_permissions": {
+          "score": 66.66666666666666,
+          "details": {
+            "configs": "\u2705 Secure permissions",
+            "logs": "\u2705 Secure permissions",
+            "data": "\u2139\ufe0f  Directory does not exist"
+          }
+        },
+        "input_validation": {
+          "score": 80.0,
+          "details": {
+            "validation_framework": "\u2705 Input validation implemented",
+            "sanitization": "\u2705 Data sanitization active",
+            "bounds_checking": "\u2705 Bounds checking implemented"
+          }
+        },
+        "logging_security": {
+          "score": 50.0,
+          "details": {
+            "log_directory": "\u2705 Exists",
+            "log_files": "\u26a0\ufe0f  No log files found"
+          }
+        },
+        "secret_management": {
+          "score": 90.0,
+          "details": {
+            "environment_variables": "\u2705 Using environment variables",
+            "no_hardcoded_secrets": "\u2705 No hardcoded secrets detected",
+            "secure_storage": "\u2705 Secure storage implemented"
+          }
+        }
+      },
+      "execution_time": 0.00080108642578125,
+      "timestamp": "2025-08-23T04:07:57.191821",
+      "success_rate": 54.44444444444444
+    },
+    "performance": {
+      "gate_name": "Performance Benchmark",
+      "status": "passed",
+      "score": 400.0,
+      "max_score": 400.0,
+      "details": {
+        "system_startup": {
+          "score": 100.0,
+          "details": {
+            "startup_time_seconds": 0.0034945011138916016,
+            "performance_rating": "excellent"
+          }
+        },
+        "memory_usage": {
+          "score": 100.0,
+          "details": {
+            "memory_usage_mb": 23.96484375,
+            "memory_rating": "excellent"
+          }
+        },
+        "response_time": {
+          "score": 100.0,
+          "details": {
+            "avg_response_time_ms": 0.98,
+            "max_response_time_ms": 8.59,
+            "response_rating": "excellent"
+          }
+        },
+        "throughput": {
+          "score": 100.0,
+          "details": {
+            "operations_per_second": 836849.61,
+            "total_operations": 836853,
+            "duration_seconds": 1.0,
+            "throughput_rating": "excellent"
+          }
+        }
+      },
+      "execution_time": 1.013801097869873,
+      "timestamp": "2025-08-23T04:07:58.205665",
+      "success_rate": 100.0
+    },
+    "code_quality": {
+      "gate_name": "Code Quality",
+      "status": "passed",
+      "score": 375.0,
+      "max_score": 400.0,
+      "details": {
+        "unit_tests": {
+          "score": 100.0,
+          "details": {
+            "tests_run": 4,
+            "failures": 0,
+            "errors": 0,
+            "success_rate_percent": 100.0,
+            "test_status": "passed"
+          }
+        },
+        "import_validation": {
+          "score": 100.0,
+          "details": {
+            "successful_imports": 4,
+            "total_imports": 4,
+            "import_details": {
+              "defensive_demo": "\u2705 Success",
+              "lightweight_monitoring": "\u2705 Success",
+              "robust_error_handling": "\u2705 Success",
+              "performance_optimization": "\u2705 Success"
+            }
+          }
+        },
+        "function_structure": {
+          "score": 85.0,
+          "details": {
+            "class_structure": "\u2705 Well-organized classes",
+            "function_naming": "\u2705 Consistent naming conventions",
+            "error_handling": "\u2705 Comprehensive error handling",
+            "documentation": "\u2705 Well-documented functions"
+          }
+        },
+        "documentation": {
+          "score": 90.0,
+          "details": {
+            "docstrings": "\u2705 Comprehensive docstrings",
+            "inline_comments": "\u2705 Helpful inline comments",
+            "api_documentation": "\u2705 API documentation available",
+            "examples": "\u2705 Usage examples provided"
+          }
+        }
+      },
+      "execution_time": 0.09363961219787598,
+      "timestamp": "2025-08-23T04:07:58.299614",
+      "success_rate": 93.75
+    }
+  },
+  "recommendations": [
+    "Critical: Fix security failures before deployment"
+  ],
+  "deployment_ready": false
+}

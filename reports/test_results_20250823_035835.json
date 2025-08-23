@@ -1,0 +1,7 @@
+{
+  "tests_run": 4,
+  "failures": 0,
+  "errors": 0,
+  "success_rate": 1.0,
+  "output": "test_defensive_configurations (__main__.DefensiveSecurityTests.test_defensive_configurations)\nTest defensive security configurations ... ok\ntest_defensive_demo_functionality (__main__.DefensiveSecurityTests.test_defensive_demo_functionality)\nTest defensive demo capabilities ... ok\ntest_package_imports (__main__.DefensiveSecurityTests.test_package_imports)\nTest that defensive security packages can be imported ... ok\ntest_secure_training_environment (__main__.DefensiveSecurityTests.test_secure_training_environment)\nTest secure training environment setup ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.055s\n\nOK\n"
+}
