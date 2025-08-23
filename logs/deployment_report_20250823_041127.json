@@ -1,0 +1,54 @@
+{
+  "message": "No deployments found",
+  "health_check_results": {
+    "timestamp": "2025-08-23T04:11:27.260693",
+    "overall_status": "healthy",
+    "checks": {
+      "system_startup": {
+        "status": "healthy",
+        "details": "System startup successful",
+        "response_time_ms": 10
+      },
+      "api_endpoints": {
+        "status": "healthy",
+        "healthy_endpoints": 4,
+        "total_endpoints": 4,
+        "endpoint_details": {
+          "/health": "healthy",
+          "/api/v1/status": "healthy",
+          "/api/v1/training": "healthy",
+          "/metrics": "healthy"
+        }
+      },
+      "database_connection": {
+        "status": "healthy",
+        "connection_pool_size": 10,
+        "active_connections": 2,
+        "response_time_ms": 5
+      },
+      "external_dependencies": {
+        "status": "healthy",
+        "healthy_dependencies": 3,
+        "total_dependencies": 3,
+        "dependency_details": {
+          "monitoring_service": "healthy",
+          "logging_service": "healthy",
+          "security_scanner": "healthy"
+        }
+      },
+      "security_validation": {
+        "status": "healthy",
+        "defensive_mode": true,
+        "security_scanning": true,
+        "access_controls": "active",
+        "encryption": "enabled"
+      }
+    }
+  },
+  "deployment_artifacts": [
+    "Dockerfile",
+    "docker-compose.prod.yml",
+    "deploy.sh",
+    "monitoring/prometheus.yml"
+  ]
+}

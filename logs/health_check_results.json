@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-08-23T04:11:28.191756",
+  "overall_status": "healthy",
+  "checks": {
+    "system_functionality": {
+      "status": "healthy",
+      "details": "Core functionality working",
+      "response_time_ms": 10
+    },
+    "configuration": {
+      "status": "healthy",
+      "details": "Configuration valid"
+    },
+    "filesystem": {
+      "status": "degraded",
+      "details": "Only 2/3 directories accessible"
+    },
+    "performance": {
+      "status": "healthy",
+      "memory_mb": 14.62,
+      "details": "Performance within normal limits"
+    },
+    "security": {
+      "status": "healthy",
+      "score": 100.0,
+      "details": "Security validation passed"
+    }
+  },
+  "execution_time_seconds": 0.098,
+  "failed_checks": 0,
+  "total_checks": 5
+}

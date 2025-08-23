@@ -1,0 +1,12 @@
+{
+  "defensive_mode": true,
+  "research_only": true,
+  "authorized_use": true,
+  "security_validation": true,
+  "monitoring_enabled": true,
+  "log_level": "INFO",
+  "error_handling": {
+    "retry_attempts": 3,
+    "circuit_breaker_enabled": true
+  }
+}

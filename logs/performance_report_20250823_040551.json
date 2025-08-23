@@ -1,0 +1,2075 @@
+{
+  "report_timestamp": "2025-08-23T04:05:51.513029",
+  "total_operations": 201,
+  "operation_statistics": {
+    "expensive_operation": {
+      "count": 1,
+      "total_duration": 0.10046195983886719,
+      "min_duration": 0.10046195983886719,
+      "max_duration": 0.10046195983886719,
+      "total_memory": 24.03515625,
+      "total_throughput": 9.954016441685178,
+      "avg_duration": 0.10046195983886719,
+      "avg_memory": 24.03515625,
+      "avg_throughput": 9.954016441685178
+    },
+    "batch_processing": {
+      "count": 200,
+      "total_duration": 2.0569052696228027,
+      "min_duration": 0.010096311569213867,
+      "max_duration": 0.010704517364501953,
+      "total_memory": 4807.03125,
+      "total_throughput": 19448.349425163207,
+      "avg_duration": 0.010284526348114014,
+      "avg_memory": 24.03515625,
+      "avg_throughput": 97.24174712581603
+    }
+  },
+  "cache_statistics": {
+    "demo_cache": {
+      "hit_count": 1,
+      "miss_count": 1,
+      "hit_rate_percent": 50.0,
+      "total_items": 1,
+      "max_size": 1000,
+      "utilization_percent": 0.1,
+      "total_size_bytes": 1024,
+      "average_access_count": 2.0
+    }
+  },
+  "resource_pool_statistics": {
+    "batch_processor": {
+      "resource_type": "thread",
+      "total_created": 2,
+      "available": 2,
+      "in_use": 0,
+      "min_size": 2,
+      "max_size": 4,
+      "utilization_percent": 0.0
+    },
+    "demo_pool": {
+      "resource_type": "thread",
+      "total_created": 3,
+      "available": 3,
+      "in_use": 0,
+      "min_size": 3,
+      "max_size": 8,
+      "utilization_percent": 0.0
+    }
+  },
+  "optimization_recommendations": [
+    "Consider increasing cache size for 'demo_cache' (current hit rate: 50.0%)"
+  ],
+  "performance_metrics": [
+    {
+      "operation_name": "expensive_operation",
+      "start_time": "2025-08-23T04:05:50.367588",
+      "end_time": "2025-08-23T04:05:50.468047",
+      "duration_seconds": 0.10046195983886719,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 9.954016441685178
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.472171",
+      "end_time": "2025-08-23T04:05:50.482420",
+      "duration_seconds": 0.010257959365844727,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.48527600232423
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.472713",
+      "end_time": "2025-08-23T04:05:50.482857",
+      "duration_seconds": 0.01014256477355957,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.59439129310547
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.482601",
+      "end_time": "2025-08-23T04:05:50.492830",
+      "duration_seconds": 0.01024174690246582,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.63959308145354
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.482906",
+      "end_time": "2025-08-23T04:05:50.493099",
+      "duration_seconds": 0.010198354721069336,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.05503214494448
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.492959",
+      "end_time": "2025-08-23T04:05:50.503223",
+      "duration_seconds": 0.010277748107910156,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.29757817574465
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.493190",
+      "end_time": "2025-08-23T04:05:50.503388",
+      "duration_seconds": 0.010202884674072266,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.0114969388232
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.503357",
+      "end_time": "2025-08-23T04:05:50.513624",
+      "duration_seconds": 0.01027989387512207,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.2772688266809
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.503464",
+      "end_time": "2025-08-23T04:05:50.513776",
+      "duration_seconds": 0.010317087173461914,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.9265823954891
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.513749",
+      "end_time": "2025-08-23T04:05:50.524002",
+      "duration_seconds": 0.010265111923217773,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.41734990128904
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.513831",
+      "end_time": "2025-08-23T04:05:50.524211",
+      "duration_seconds": 0.010384559631347656,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.29681329782349
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.524128",
+      "end_time": "2025-08-23T04:05:50.534391",
+      "duration_seconds": 0.010275602340698242,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.31789600686791
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.524267",
+      "end_time": "2025-08-23T04:05:50.534590",
+      "duration_seconds": 0.010327339172363281,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.83036291439653
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.534569",
+      "end_time": "2025-08-23T04:05:50.544811",
+      "duration_seconds": 0.010253429412841797,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.52834488210948
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.534648",
+      "end_time": "2025-08-23T04:05:50.545014",
+      "duration_seconds": 0.010370731353759766,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.42521495241161
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.544932",
+      "end_time": "2025-08-23T04:05:50.555202",
+      "duration_seconds": 0.010284423828125,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.23442136498517
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.545073",
+      "end_time": "2025-08-23T04:05:50.555421",
+      "duration_seconds": 0.010352134704589844,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.59843390142791
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.555334",
+      "end_time": "2025-08-23T04:05:50.565629",
+      "duration_seconds": 0.010306835174560547,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.02299329169558
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.555479",
+      "end_time": "2025-08-23T04:05:50.565829",
+      "duration_seconds": 0.010354995727539062,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.57174433597348
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.565765",
+      "end_time": "2025-08-23T04:05:50.576013",
+      "duration_seconds": 0.010258913040161133,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.47621371633085
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.565887",
+      "end_time": "2025-08-23T04:05:50.576234",
+      "duration_seconds": 0.010351896286010742,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.6006586978051
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.576149",
+      "end_time": "2025-08-23T04:05:50.586387",
+      "duration_seconds": 0.010251283645629883,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.54875921575923
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.576289",
+      "end_time": "2025-08-23T04:05:50.586654",
+      "duration_seconds": 0.01036977767944336,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.43408286200396
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.586590",
+      "end_time": "2025-08-23T04:05:50.596823",
+      "duration_seconds": 0.010244369506835938,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.61459690932787
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.586711",
+      "end_time": "2025-08-23T04:05:50.597034",
+      "duration_seconds": 0.010327577590942383,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.8281275249902
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.596953",
+      "end_time": "2025-08-23T04:05:50.607212",
+      "duration_seconds": 0.010270118713378906,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.36985792552697
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.597091",
+      "end_time": "2025-08-23T04:05:50.607404",
+      "duration_seconds": 0.010315895080566406,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.93778311916428
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.607449",
+      "end_time": "2025-08-23T04:05:50.617608",
+      "duration_seconds": 0.01016688346862793,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.35855826278639
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.607329",
+      "end_time": "2025-08-23T04:05:50.617793",
+      "duration_seconds": 0.010471820831298828,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.49437639451756
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.617696",
+      "end_time": "2025-08-23T04:05:50.627964",
+      "duration_seconds": 0.010277032852172852,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.30434984340563
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.617891",
+      "end_time": "2025-08-23T04:05:50.628109",
+      "duration_seconds": 0.010223150253295898,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.81720655798875
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.628071",
+      "end_time": "2025-08-23T04:05:50.638343",
+      "duration_seconds": 0.010285615921020508,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.22315198998632
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.628189",
+      "end_time": "2025-08-23T04:05:50.638573",
+      "duration_seconds": 0.010386943817138672,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.27470963595465
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.638486",
+      "end_time": "2025-08-23T04:05:50.648732",
+      "duration_seconds": 0.010226249694824219,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.78755945164599
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.638692",
+      "end_time": "2025-08-23T04:05:50.649017",
+      "duration_seconds": 0.01032876968383789,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.81695212594063
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.648958",
+      "end_time": "2025-08-23T04:05:50.659216",
+      "duration_seconds": 0.010269880294799805,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.37211839814277
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.649117",
+      "end_time": "2025-08-23T04:05:50.659434",
+      "duration_seconds": 0.010321617126464844,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.8840432412455
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.659355",
+      "end_time": "2025-08-23T04:05:50.669640",
+      "duration_seconds": 0.010297298431396484,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.11285019680481
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.659522",
+      "end_time": "2025-08-23T04:05:50.669858",
+      "duration_seconds": 0.010341405868530273,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.69865129682996
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.669778",
+      "end_time": "2025-08-23T04:05:50.680034",
+      "duration_seconds": 0.010267496109008789,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.39472889817718
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.669920",
+      "end_time": "2025-08-23T04:05:50.680262",
+      "duration_seconds": 0.010345697402954102,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.65853939575507
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.680180",
+      "end_time": "2025-08-23T04:05:50.690444",
+      "duration_seconds": 0.010276079177856445,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.31338019999536
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.680325",
+      "end_time": "2025-08-23T04:05:50.690745",
+      "duration_seconds": 0.01042485237121582,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.92461978273299
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.690669",
+      "end_time": "2025-08-23T04:05:50.700856",
+      "duration_seconds": 0.010196685791015625,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.07108118219229
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.690808",
+      "end_time": "2025-08-23T04:05:50.701064",
+      "duration_seconds": 0.010260820388793945,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.45809419801566
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.700991",
+      "end_time": "2025-08-23T04:05:50.711179",
+      "duration_seconds": 0.010201215744018555,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.0275317269264
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.701130",
+      "end_time": "2025-08-23T04:05:50.711387",
+      "duration_seconds": 0.010260581970214844,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.46035876940236
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.711320",
+      "end_time": "2025-08-23T04:05:50.721597",
+      "duration_seconds": 0.010288000106811523,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.20062107483025
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.711453",
+      "end_time": "2025-08-23T04:05:50.721803",
+      "duration_seconds": 0.010354757308959961,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.57396790311068
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.721730",
+      "end_time": "2025-08-23T04:05:50.731988",
+      "duration_seconds": 0.010269641876220703,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.37437897571621
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.721855",
+      "end_time": "2025-08-23T04:05:50.732351",
+      "duration_seconds": 0.010500907897949219,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.22986104804286
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.732141",
+      "end_time": "2025-08-23T04:05:50.742391",
+      "duration_seconds": 0.01026153564453125,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.45130111524163
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.732416",
+      "end_time": "2025-08-23T04:05:50.742603",
+      "duration_seconds": 0.010191202163696289,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.12385074277694
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.742565",
+      "end_time": "2025-08-23T04:05:50.752820",
+      "duration_seconds": 0.010265350341796875,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.41508732813081
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.742666",
+      "end_time": "2025-08-23T04:05:50.753039",
+      "duration_seconds": 0.010378837585449219,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.3499035192502
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.752960",
+      "end_time": "2025-08-23T04:05:50.763222",
+      "duration_seconds": 0.010277748107910156,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.29757817574465
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.753106",
+      "end_time": "2025-08-23T04:05:50.763448",
+      "duration_seconds": 0.010346174240112305,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.6540845719553
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.763375",
+      "end_time": "2025-08-23T04:05:50.773639",
+      "duration_seconds": 0.010275840759277344,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.31563805104409
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.763537",
+      "end_time": "2025-08-23T04:05:50.773878",
+      "duration_seconds": 0.010344266891479492,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.6719063313896
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.773785",
+      "end_time": "2025-08-23T04:05:50.784035",
+      "duration_seconds": 0.010262012481689453,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.446772919474
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.773942",
+      "end_time": "2025-08-23T04:05:50.784264",
+      "duration_seconds": 0.010326623916625977,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.83706970193707
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.784181",
+      "end_time": "2025-08-23T04:05:50.794440",
+      "duration_seconds": 0.010271549224853516,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.35629729353326
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.784325",
+      "end_time": "2025-08-23T04:05:50.794681",
+      "duration_seconds": 0.010361671447753906,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.50952600092039
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.794615",
+      "end_time": "2025-08-23T04:05:50.804879",
+      "duration_seconds": 0.010277271270751953,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.30209251612304
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.794765",
+      "end_time": "2025-08-23T04:05:50.805170",
+      "duration_seconds": 0.010410785675048828,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.05422983557001
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.805057",
+      "end_time": "2025-08-23T04:05:50.815246",
+      "duration_seconds": 0.01019906997680664,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.04815559399691
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.805266",
+      "end_time": "2025-08-23T04:05:50.815429",
+      "duration_seconds": 0.010162830352783203,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.39778538919909
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.815414",
+      "end_time": "2025-08-23T04:05:50.825659",
+      "duration_seconds": 0.010253667831420898,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.52607715023136
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.815453",
+      "end_time": "2025-08-23T04:05:50.825866",
+      "duration_seconds": 0.010419130325317383,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.9773002906112
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.825779",
+      "end_time": "2025-08-23T04:05:50.835981",
+      "duration_seconds": 0.010211706161499023,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.92682869883963
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.825944",
+      "end_time": "2025-08-23T04:05:50.836138",
+      "duration_seconds": 0.010199546813964844,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.04357176250585
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.836106",
+      "end_time": "2025-08-23T04:05:50.846360",
+      "duration_seconds": 0.010265350341796875,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.41508732813081
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.836238",
+      "end_time": "2025-08-23T04:05:50.846600",
+      "duration_seconds": 0.010368585586547852,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.44517004299938
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.846527",
+      "end_time": "2025-08-23T04:05:50.856775",
+      "duration_seconds": 0.010262489318847656,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.4422451445033
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.846680",
+      "end_time": "2025-08-23T04:05:50.856963",
+      "duration_seconds": 0.010297298431396484,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.11285019680481
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.856945",
+      "end_time": "2025-08-23T04:05:50.867172",
+      "duration_seconds": 0.010237455368041992,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.68052353338457
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.857056",
+      "end_time": "2025-08-23T04:05:50.867341",
+      "duration_seconds": 0.010290861129760742,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.17359775733846
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.867292",
+      "end_time": "2025-08-23T04:05:50.877466",
+      "duration_seconds": 0.010183572769165039,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.19736380024817
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.867422",
+      "end_time": "2025-08-23T04:05:50.877666",
+      "duration_seconds": 0.010251760482788086,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.5442219586502
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.877599",
+      "end_time": "2025-08-23T04:05:50.887854",
+      "duration_seconds": 0.010265588760375977,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.41282486006921
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.877760",
+      "end_time": "2025-08-23T04:05:50.888054",
+      "duration_seconds": 0.0102996826171875,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.09037037037037
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.888006",
+      "end_time": "2025-08-23T04:05:50.898369",
+      "duration_seconds": 0.010372400283813477,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.40970003447879
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.888157",
+      "end_time": "2025-08-23T04:05:50.898649",
+      "duration_seconds": 0.010497093200683594,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.26446806577633
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.898545",
+      "end_time": "2025-08-23T04:05:50.908828",
+      "duration_seconds": 0.010295629501342773,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.1285922701063
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.898735",
+      "end_time": "2025-08-23T04:05:50.909124",
+      "duration_seconds": 0.010395526885986328,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.19522040273382
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.909011",
+      "end_time": "2025-08-23T04:05:50.919267",
+      "duration_seconds": 0.010267257690429688,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.39699052572915
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.909223",
+      "end_time": "2025-08-23T04:05:50.919462",
+      "duration_seconds": 0.010245323181152344,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.60551056501909
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.919404",
+      "end_time": "2025-08-23T04:05:50.929635",
+      "duration_seconds": 0.010240316390991211,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.65323275360295
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.919582",
+      "end_time": "2025-08-23T04:05:50.929849",
+      "duration_seconds": 0.01027059555053711,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.36533729513906
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.929764",
+      "end_time": "2025-08-23T04:05:50.939993",
+      "duration_seconds": 0.010239124298095703,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.66460205839891
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.929925",
+      "end_time": "2025-08-23T04:05:50.940228",
+      "duration_seconds": 0.010308027267456055,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.0117728692032
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.940147",
+      "end_time": "2025-08-23T04:05:50.950452",
+      "duration_seconds": 0.010315179824829102,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.9445047960245
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.940294",
+      "end_time": "2025-08-23T04:05:50.950673",
+      "duration_seconds": 0.010386228561401367,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.28133966898515
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.950625",
+      "end_time": "2025-08-23T04:05:50.960855",
+      "duration_seconds": 0.010240554809570312,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.65095921028124
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.950758",
+      "end_time": "2025-08-23T04:05:50.961055",
+      "duration_seconds": 0.010303020477294922,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.05891609200722
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.960998",
+      "end_time": "2025-08-23T04:05:50.971255",
+      "duration_seconds": 0.010272741317749023,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.34499965186716
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.961149",
+      "end_time": "2025-08-23T04:05:50.971566",
+      "duration_seconds": 0.010422468185424805,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.94656296465745
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.971420",
+      "end_time": "2025-08-23T04:05:50.981636",
+      "duration_seconds": 0.010226011276245117,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.78983936023874
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.971671",
+      "end_time": "2025-08-23T04:05:50.981909",
+      "duration_seconds": 0.010244131088256836,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.61686875974586
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.981772",
+      "end_time": "2025-08-23T04:05:50.991992",
+      "duration_seconds": 0.010230779647827148,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.74426137820139
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.981991",
+      "end_time": "2025-08-23T04:05:50.992577",
+      "duration_seconds": 0.010590791702270508,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 94.42164741901352
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.992474",
+      "end_time": "2025-08-23T04:05:51.002672",
+      "duration_seconds": 0.01020669937133789,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.97486568558747
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:50.992847",
+      "end_time": "2025-08-23T04:05:51.003093",
+      "duration_seconds": 0.010250568389892578,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.5555658929153
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.002810",
+      "end_time": "2025-08-23T04:05:51.012990",
+      "duration_seconds": 0.010189294815063477,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.14221868638417
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.003189",
+      "end_time": "2025-08-23T04:05:51.013359",
+      "duration_seconds": 0.010177135467529297,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.25947617485826
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.013127",
+      "end_time": "2025-08-23T04:05:51.023340",
+      "duration_seconds": 0.01022195816040039,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.82861407846246
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.013454",
+      "end_time": "2025-08-23T04:05:51.023683",
+      "duration_seconds": 0.010233879089355469,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.71465846612618
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.023472",
+      "end_time": "2025-08-23T04:05:51.033612",
+      "duration_seconds": 0.010147571563720703,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.54574503077863
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.023769",
+      "end_time": "2025-08-23T04:05:51.033933",
+      "duration_seconds": 0.010164022445678711,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.38624475147193
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.033734",
+      "end_time": "2025-08-23T04:05:51.043937",
+      "duration_seconds": 0.010216712951660156,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.8788387939886
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.033975",
+      "end_time": "2025-08-23T04:05:51.044128",
+      "duration_seconds": 0.010153770446777344,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.4855827932751
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.044101",
+      "end_time": "2025-08-23T04:05:51.054253",
+      "duration_seconds": 0.010166168212890625,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.36547842401501
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.044172",
+      "end_time": "2025-08-23T04:05:51.054574",
+      "duration_seconds": 0.010402679443359375,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.12907957462413
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.054547",
+      "end_time": "2025-08-23T04:05:51.064683",
+      "duration_seconds": 0.010173320770263672,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.29632059995313
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.054638",
+      "end_time": "2025-08-23T04:05:51.064864",
+      "duration_seconds": 0.010226011276245117,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.78983936023874
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.064851",
+      "end_time": "2025-08-23T04:05:51.075000",
+      "duration_seconds": 0.010160207748413086,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.42318432476827
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.064898",
+      "end_time": "2025-08-23T04:05:51.075195",
+      "duration_seconds": 0.010297536849975586,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.11060174573406
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.075171",
+      "end_time": "2025-08-23T04:05:51.085310",
+      "duration_seconds": 0.010146141052246094,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.55963906382179
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.075244",
+      "end_time": "2025-08-23T04:05:51.085438",
+      "duration_seconds": 0.010193347930908203,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.10319502268794
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.085426",
+      "end_time": "2025-08-23T04:05:51.095584",
+      "duration_seconds": 0.010166645050048828,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.36086487500586
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.085459",
+      "end_time": "2025-08-23T04:05:51.095738",
+      "duration_seconds": 0.010279417037963867,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.28178128261627
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.095723",
+      "end_time": "2025-08-23T04:05:51.105861",
+      "duration_seconds": 0.010146141052246094,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.55963906382179
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.095770",
+      "end_time": "2025-08-23T04:05:51.105993",
+      "duration_seconds": 0.010223150253295898,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.81720655798875
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.105981",
+      "end_time": "2025-08-23T04:05:51.116164",
+      "duration_seconds": 0.010195732116699219,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.08025441960528
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.106015",
+      "end_time": "2025-08-23T04:05:51.116330",
+      "duration_seconds": 0.010316848754882812,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.92882233314846
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.116310",
+      "end_time": "2025-08-23T04:05:51.126397",
+      "duration_seconds": 0.010096311569213867,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 99.04607174061917
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.116381",
+      "end_time": "2025-08-23T04:05:51.126589",
+      "duration_seconds": 0.010208606719970703,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.95656032509692
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.126575",
+      "end_time": "2025-08-23T04:05:51.136772",
+      "duration_seconds": 0.01020669937133789,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.97486568558747
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.126613",
+      "end_time": "2025-08-23T04:05:51.136911",
+      "duration_seconds": 0.010298728942871094,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.09936105194926
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.136934",
+      "end_time": "2025-08-23T04:05:51.147090",
+      "duration_seconds": 0.010165929794311523,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.36778536081991
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.136898",
+      "end_time": "2025-08-23T04:05:51.147225",
+      "duration_seconds": 0.010327339172363281,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.83036291439653
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.147259",
+      "end_time": "2025-08-23T04:05:51.157374",
+      "duration_seconds": 0.01012563705444336,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.75921827172121
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.147210",
+      "end_time": "2025-08-23T04:05:51.157530",
+      "duration_seconds": 0.010320901870727539,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.89075746725496
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.157560",
+      "end_time": "2025-08-23T04:05:51.167647",
+      "duration_seconds": 0.010097742080688477,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 99.03204023327746
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.157485",
+      "end_time": "2025-08-23T04:05:51.167784",
+      "duration_seconds": 0.0102996826171875,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.09037037037037
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.167808",
+      "end_time": "2025-08-23T04:05:51.177949",
+      "duration_seconds": 0.010149478912353516,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.52722574583039
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.167770",
+      "end_time": "2025-08-23T04:05:51.178074",
+      "duration_seconds": 0.010303974151611328,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.0499328983294
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.178060",
+      "end_time": "2025-08-23T04:05:51.188247",
+      "duration_seconds": 0.010198593139648438,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.05273985412381
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.178096",
+      "end_time": "2025-08-23T04:05:51.188403",
+      "duration_seconds": 0.010308265686035156,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.0095290961236
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.188390",
+      "end_time": "2025-08-23T04:05:51.198553",
+      "duration_seconds": 0.010173320770263672,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.29632059995313
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.188434",
+      "end_time": "2025-08-23T04:05:51.198710",
+      "duration_seconds": 0.010276079177856445,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.31338019999536
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.198697",
+      "end_time": "2025-08-23T04:05:51.208879",
+      "duration_seconds": 0.010191917419433594,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.11696453635258
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.198738",
+      "end_time": "2025-08-23T04:05:51.209033",
+      "duration_seconds": 0.010294437408447266,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.13983973319746
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.209054",
+      "end_time": "2025-08-23T04:05:51.219154",
+      "duration_seconds": 0.010109663009643555,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.91526542933283
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.209019",
+      "end_time": "2025-08-23T04:05:51.219306",
+      "duration_seconds": 0.010287284851074219,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.2073792528043
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.219289",
+      "end_time": "2025-08-23T04:05:51.229468",
+      "duration_seconds": 0.010187864303588867,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.1559991575203
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.219331",
+      "end_time": "2025-08-23T04:05:51.229705",
+      "duration_seconds": 0.010380983352661133,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.32998782756482
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.229627",
+      "end_time": "2025-08-23T04:05:51.239804",
+      "duration_seconds": 0.010186910629272461,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.16518828843589
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.229788",
+      "end_time": "2025-08-23T04:05:51.240004",
+      "duration_seconds": 0.010221004486083984,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.83774201073011
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.239986",
+      "end_time": "2025-08-23T04:05:51.250164",
+      "duration_seconds": 0.010186433792114258,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.16978349912229
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.240112",
+      "end_time": "2025-08-23T04:05:51.250469",
+      "duration_seconds": 0.010361433029174805,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.51174670378978
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.250410",
+      "end_time": "2025-08-23T04:05:51.260607",
+      "duration_seconds": 0.010208606719970703,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.95656032509692
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.250568",
+      "end_time": "2025-08-23T04:05:51.260851",
+      "duration_seconds": 0.010286808013916016,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.211885226904
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.260780",
+      "end_time": "2025-08-23T04:05:51.271193",
+      "duration_seconds": 0.010422468185424805,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.94656296465745
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.260925",
+      "end_time": "2025-08-23T04:05:51.271364",
+      "duration_seconds": 0.010443687438964844,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.75162085654279
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.271328",
+      "end_time": "2025-08-23T04:05:51.281530",
+      "duration_seconds": 0.010210752487182617,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.93597496906158
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.271441",
+      "end_time": "2025-08-23T04:05:51.281735",
+      "duration_seconds": 0.0102996826171875,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.09037037037037
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.281661",
+      "end_time": "2025-08-23T04:05:51.291911",
+      "duration_seconds": 0.010259151458740234,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.47394840808738
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.281828",
+      "end_time": "2025-08-23T04:05:51.292067",
+      "duration_seconds": 0.01024317741394043,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.6259572190024
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.292146",
+      "end_time": "2025-08-23T04:05:51.302358",
+      "duration_seconds": 0.010222196578979492,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.82633236151604
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.292047",
+      "end_time": "2025-08-23T04:05:51.302662",
+      "duration_seconds": 0.010619163513183594,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 94.16937584193983
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.302533",
+      "end_time": "2025-08-23T04:05:51.312738",
+      "duration_seconds": 0.01021432876586914,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.90168526212595
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.302750",
+      "end_time": "2025-08-23T04:05:51.312937",
+      "duration_seconds": 0.010190963745117188,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 98.12614635972301
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.312863",
+      "end_time": "2025-08-23T04:05:51.323172",
+      "duration_seconds": 0.010318756103515625,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.91090573012939
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.313005",
+      "end_time": "2025-08-23T04:05:51.323381",
+      "duration_seconds": 0.010389566421508789,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.25040732496501
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.323310",
+      "end_time": "2025-08-23T04:05:51.333747",
+      "duration_seconds": 0.010452032089233398,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.6751750724241
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.323469",
+      "end_time": "2025-08-23T04:05:51.334008",
+      "duration_seconds": 0.010542154312133789,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 94.85727208992017
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.333915",
+      "end_time": "2025-08-23T04:05:51.344236",
+      "duration_seconds": 0.010334253311157227,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.76557849809667
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.334073",
+      "end_time": "2025-08-23T04:05:51.344536",
+      "duration_seconds": 0.010466814041137695,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.54005603517004
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.344422",
+      "end_time": "2025-08-23T04:05:51.354648",
+      "duration_seconds": 0.010234832763671875,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.70555348490495
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.344603",
+      "end_time": "2025-08-23T04:05:51.354887",
+      "duration_seconds": 0.01028585433959961,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.2208984284456
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.354839",
+      "end_time": "2025-08-23T04:05:51.365155",
+      "duration_seconds": 0.010328292846679688,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.8214219759926
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.354937",
+      "end_time": "2025-08-23T04:05:51.365415",
+      "duration_seconds": 0.010480165481567383,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.41834065109084
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.365319",
+      "end_time": "2025-08-23T04:05:51.375545",
+      "duration_seconds": 0.010240316390991211,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.65323275360295
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.365476",
+      "end_time": "2025-08-23T04:05:51.375806",
+      "duration_seconds": 0.010334253311157227,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.76557849809667
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.375731",
+      "end_time": "2025-08-23T04:05:51.386261",
+      "duration_seconds": 0.010539770126342773,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 94.87872961295723
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.375872",
+      "end_time": "2025-08-23T04:05:51.386570",
+      "duration_seconds": 0.010704517364501953,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 93.41850416499621
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.386481",
+      "end_time": "2025-08-23T04:05:51.396755",
+      "duration_seconds": 0.010285139083862305,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.22765942650501
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.386666",
+      "end_time": "2025-08-23T04:05:51.396995",
+      "duration_seconds": 0.010334253311157227,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.76557849809667
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.396914",
+      "end_time": "2025-08-23T04:05:51.407150",
+      "duration_seconds": 0.010245800018310547,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.60096802717922
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.397073",
+      "end_time": "2025-08-23T04:05:51.407383",
+      "duration_seconds": 0.010316133499145508,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.9355427673392
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.407305",
+      "end_time": "2025-08-23T04:05:51.417574",
+      "duration_seconds": 0.010279178619384766,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.28403766757897
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.407464",
+      "end_time": "2025-08-23T04:05:51.417743",
+      "duration_seconds": 0.010283470153808594,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.24343874617453
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.417725",
+      "end_time": "2025-08-23T04:05:51.427959",
+      "duration_seconds": 0.010246038436889648,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.5986969168121
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.417829",
+      "end_time": "2025-08-23T04:05:51.428244",
+      "duration_seconds": 0.010420799255371094,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 95.96192916628534
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.428158",
+      "end_time": "2025-08-23T04:05:51.438403",
+      "duration_seconds": 0.010255813598632812,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.50567230797843
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.428320",
+      "end_time": "2025-08-23T04:05:51.438690",
+      "duration_seconds": 0.01037454605102539,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.38975961759434
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.438610",
+      "end_time": "2025-08-23T04:05:51.448859",
+      "duration_seconds": 0.010258197784423828,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.48301027285827
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.438768",
+      "end_time": "2025-08-23T04:05:51.449086",
+      "duration_seconds": 0.010322093963623047,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.87956760752067
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.449009",
+      "end_time": "2025-08-23T04:05:51.459259",
+      "duration_seconds": 0.010261297225952148,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.45356537094263
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.449167",
+      "end_time": "2025-08-23T04:05:51.459477",
+      "duration_seconds": 0.010314464569091797,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.95122740511303
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.459404",
+      "end_time": "2025-08-23T04:05:51.469634",
+      "duration_seconds": 0.010241031646728516,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.64641244121619
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.459579",
+      "end_time": "2025-08-23T04:05:51.469860",
+      "duration_seconds": 0.010285139083862305,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.22765942650501
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.469784",
+      "end_time": "2025-08-23T04:05:51.479985",
+      "duration_seconds": 0.010210514068603516,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.93826180357726
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.469948",
+      "end_time": "2025-08-23T04:05:51.480167",
+      "duration_seconds": 0.010223388671875,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.81492537313433
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.480130",
+      "end_time": "2025-08-23T04:05:51.490382",
+      "duration_seconds": 0.010261058807373047,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.45582973186487
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.480234",
+      "end_time": "2025-08-23T04:05:51.490612",
+      "duration_seconds": 0.010383367538452148,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 96.30786893527129
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.490540",
+      "end_time": "2025-08-23T04:05:51.500760",
+      "duration_seconds": 0.010230302810668945,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.74881726444336
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.490691",
+      "end_time": "2025-08-23T04:05:51.500939",
+      "duration_seconds": 0.01025247573852539,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.53741686433189
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.500894",
+      "end_time": "2025-08-23T04:05:51.511128",
+      "duration_seconds": 0.010246038436889648,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 97.5986969168121
+    },
+    {
+      "operation_name": "batch_processing",
+      "start_time": "2025-08-23T04:05:51.501030",
+      "end_time": "2025-08-23T04:05:51.511599",
+      "duration_seconds": 0.010572671890258789,
+      "memory_usage_mb": 24.03515625,
+      "cpu_usage_percent": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_ops_per_sec": 94.58347051527794
+    }
+  ]
+}
