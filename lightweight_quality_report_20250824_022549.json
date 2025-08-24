@@ -1,0 +1,286 @@
+{
+  "timestamp": "2025-08-24T02:25:49.928611",
+  "overall_success": false,
+  "overall_score": 74.98080065359477,
+  "total_gates": 8,
+  "passed_gates": 5,
+  "failed_gates": 3,
+  "execution_time_total_ms": 1145.6775665283203,
+  "gate_results": [
+    {
+      "gate_name": "Import Validation",
+      "success": false,
+      "score": 0.0,
+      "execution_time_ms": 125.70977210998535,
+      "details": {
+        "success": false,
+        "score": 0.0,
+        "successful_imports": 0,
+        "failed_imports": [
+          "autonomous_defensive_demo: No module named 'torch'",
+          "enhanced_defensive_training: No module named 'psutil'",
+          "robust_defensive_framework: No module named 'psutil'",
+          "high_performance_defensive_platform: No module named 'aioredis'"
+        ],
+        "import_details": {
+          "autonomous_defensive_demo": "\u274c Failed: No module named 'torch'",
+          "enhanced_defensive_training": "\u274c Failed: No module named 'psutil'",
+          "robust_defensive_framework": "\u274c Failed: No module named 'psutil'",
+          "high_performance_defensive_platform": "\u274c Failed: No module named 'aioredis'"
+        },
+        "recommendations": [
+          "Fix import errors in autonomous implementations"
+        ]
+      },
+      "warnings": [],
+      "errors": [],
+      "recommendations": [
+        "Fix import errors in autonomous implementations"
+      ]
+    },
+    {
+      "gate_name": "Code Structure",
+      "success": true,
+      "score": 100,
+      "execution_time_ms": 4.234075546264648,
+      "details": {
+        "success": true,
+        "score": 100,
+        "python_files_count": 153,
+        "missing_files": [],
+        "missing_directories": [],
+        "missing_autonomous": [],
+        "autonomous_implementations": 4,
+        "recommendations": [
+          "Excellent project structure!"
+        ]
+      },
+      "warnings": [],
+      "errors": [],
+      "recommendations": [
+        "Excellent project structure!"
+      ]
+    },
+    {
+      "gate_name": "Syntax Validation",
+      "success": false,
+      "score": 99.34640522875817,
+      "execution_time_ms": 625.2081394195557,
+      "details": {
+        "success": false,
+        "score": 99.34640522875817,
+        "total_files": 153,
+        "valid_files": 152,
+        "syntax_errors": [
+          "/root/repo/gan_cyber_range/optimization/advanced_performance.py: Line 160: unexpected character after line continuation character"
+        ],
+        "recommendations": [
+          "Fix 1 syntax errors",
+          "/root/repo/gan_cyber_range/optimization/advanced_performance.py: Line 160: unexpected character after line continuation character"
+        ]
+      },
+      "warnings": [],
+      "errors": [],
+      "recommendations": [
+        "Fix 1 syntax errors",
+        "/root/repo/gan_cyber_range/optimization/advanced_performance.py: Line 160: unexpected character after line continuation character"
+      ]
+    },
+    {
+      "gate_name": "Documentation Check",
+      "success": true,
+      "score": 102.5,
+      "execution_time_ms": 5.31458854675293,
+      "details": {
+        "success": true,
+        "score": 102.5,
+        "existing_docs": [
+          "README.md",
+          "CONTRIBUTING.md",
+          "LICENSE"
+        ],
+        "missing_docs": [],
+        "has_docs_dir": true,
+        "readme_quality_score": 75,
+        "docstring_coverage": 1.0,
+        "recommendations": [
+          "Good documentation coverage!"
+        ]
+      },
+      "warnings": [],
+      "errors": [],
+      "recommendations": [
+        "Good documentation coverage!"
+      ]
+    },
+    {
+      "gate_name": "File Organization",
+      "success": true,
+      "score": 100.0,
+      "execution_time_ms": 3.7398338317871094,
+      "details": {
+        "success": true,
+        "score": 100.0,
+        "naming_score": 100.0,
+        "structure_score": 100.0,
+        "good_names": 153,
+        "bad_names": [],
+        "existing_structure": {
+          "gan_cyber_range": true,
+          "tests": true,
+          "docs": true,
+          "examples": true
+        },
+        "recommendations": [
+          "Excellent file organization!"
+        ]
+      },
+      "warnings": [],
+      "errors": [],
+      "recommendations": [
+        "Excellent file organization!"
+      ]
+    },
+    {
+      "gate_name": "Basic Security Check",
+      "success": false,
+      "score": 0,
+      "execution_time_ms": 369.7834014892578,
+      "details": {
+        "success": false,
+        "score": 0,
+        "security_issues": [
+          "/root/repo/comprehensive_quality_gates.py: Dynamic import usage",
+          "/root/repo/enhanced_demo.py: Dynamic import usage",
+          "/root/repo/run_comprehensive_tests.py: Use of input() - potential security risk",
+          "/root/repo/simple_test_runner.py: Use of input() - potential security risk",
+          "/root/repo/test_basic_functionality.py: Dynamic import usage",
+          "/root/repo/test_basic_functionality.py: Use of input() - potential security risk",
+          "/root/repo/test_basic_integration.py: Use of input() - potential security risk",
+          "/root/repo/test_security_only.py: Use of input() - potential security risk",
+          "/root/repo/comprehensive_quality_gates_v2.py: Dynamic import usage",
+          "/root/repo/lightweight_quality_gates.py: Use of eval() function",
+          "/root/repo/lightweight_quality_gates.py: Use of exec() function",
+          "/root/repo/lightweight_quality_gates.py: Dynamic import usage",
+          "/root/repo/lightweight_quality_gates.py: Use of os.system()",
+          "/root/repo/lightweight_quality_gates.py: Use of input() - potential security risk",
+          "/root/repo/tests/test_demo_system.py: Use of input() - potential security risk",
+          "/root/repo/tests/test_security.py: Use of input() - potential security risk",
+          "/root/repo/tests/test_utils.py: Use of input() - potential security risk",
+          "/root/repo/gan_cyber_range/core/attack_gan.py: Use of eval() function",
+          "/root/repo/gan_cyber_range/core/minimal_requirements.py: Use of eval() function",
+          "/root/repo/gan_cyber_range/core/minimal_requirements.py: Dynamic import usage",
+          "/root/repo/gan_cyber_range/generators/malware_gan.py: Use of eval() function",
+          "/root/repo/gan_cyber_range/generators/network_gan.py: Use of eval() function",
+          "/root/repo/gan_cyber_range/generators/social_gan.py: Use of eval() function",
+          "/root/repo/gan_cyber_range/generators/web_attack_gan.py: Use of eval() function",
+          "/root/repo/gan_cyber_range/security/comprehensive_security.py: Use of input() - potential security risk",
+          "/root/repo/gan_cyber_range/utils/enhanced_security.py: Use of input() - potential security risk",
+          "/root/repo/gan_cyber_range/utils/optimization.py: Use of eval() function",
+          "/root/repo/gan_cyber_range/utils/performance.py: Use of eval() function",
+          "/root/repo/gan_cyber_range/utils/validation.py: Use of input() - potential security risk"
+        ],
+        "security_warnings": [
+          "/root/repo/robust_defensive_framework.py: Hardcoded secret detected",
+          "/root/repo/lightweight_quality_gates.py: Security-related TODO found",
+          "/root/repo/lightweight_quality_gates.py: Security-related FIXME found",
+          "/root/repo/tests/test_security.py: Hardcoded password detected",
+          "/root/repo/gan_cyber_range/blue_team/incident_response.py: Hardcoded password detected",
+          "/root/repo/gan_cyber_range/utils/enhanced_security.py: Hardcoded secret detected",
+          "/root/repo/gan_cyber_range/utils/security.py: Hardcoded secret detected"
+        ],
+        "files_scanned": 153,
+        "recommendations": [
+          "Fix 29 security issues immediately",
+          "/root/repo/comprehensive_quality_gates.py: Dynamic import usage",
+          "/root/repo/enhanced_demo.py: Dynamic import usage",
+          "/root/repo/run_comprehensive_tests.py: Use of input() - potential security risk",
+          "Review 7 security warnings"
+        ]
+      },
+      "warnings": [],
+      "errors": [],
+      "recommendations": [
+        "Fix 29 security issues immediately",
+        "/root/repo/comprehensive_quality_gates.py: Dynamic import usage",
+        "/root/repo/enhanced_demo.py: Dynamic import usage",
+        "/root/repo/run_comprehensive_tests.py: Use of input() - potential security risk",
+        "Review 7 security warnings"
+      ]
+    },
+    {
+      "gate_name": "Defensive Components",
+      "success": true,
+      "score": 98.0,
+      "execution_time_ms": 9.444713592529297,
+      "details": {
+        "success": true,
+        "score": 98.0,
+        "existing_modules": [
+          "gan_cyber_range/security",
+          "gan_cyber_range/training",
+          "gan_cyber_range/blue_team",
+          "gan_cyber_range/evaluation"
+        ],
+        "missing_modules": [],
+        "existing_autonomous": [
+          "autonomous_defensive_demo.py",
+          "enhanced_defensive_training.py",
+          "robust_defensive_framework.py",
+          "high_performance_defensive_platform.py"
+        ],
+        "missing_autonomous": [],
+        "files_with_defensive_content": 18,
+        "recommendations": [
+          "Comprehensive defensive capabilities implemented!"
+        ]
+      },
+      "warnings": [],
+      "errors": [],
+      "recommendations": [
+        "Comprehensive defensive capabilities implemented!"
+      ]
+    },
+    {
+      "gate_name": "Requirements Validation",
+      "success": true,
+      "score": 100.0,
+      "execution_time_ms": 0.21982192993164062,
+      "details": {
+        "success": true,
+        "score": 100.0,
+        "total_requirements": 37,
+        "pinned_versions": 37,
+        "unpinned_requirements": [],
+        "pinning_rate": 1.0,
+        "defensive_packages": [
+          "torch",
+          "torch",
+          "transformers",
+          "numpy",
+          "pandas",
+          "fastapi",
+          "uvicorn",
+          "sqlalchemy",
+          "redis",
+          "cryptography"
+        ],
+        "recommendations": [
+          "Good dependency management!"
+        ]
+      },
+      "warnings": [],
+      "errors": [],
+      "recommendations": [
+        "Good dependency management!"
+      ]
+    }
+  ],
+  "recommendations": [
+    "\ud83d\udd34 Priority: Fix failing quality gates: Import Validation, Syntax Validation, Basic Security Check",
+    "\ud83d\udfe1 Improve low-scoring areas: Import Validation, Basic Security Check",
+    "\u26a0\ufe0f Acceptable quality. Some improvements needed before production",
+    "\ud83d\udd27 Focus on fixing import dependencies and module structure",
+    "\ud83d\udee1\ufe0f Address security vulnerabilities and improve security practices"
+  ]
+}
