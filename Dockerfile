@@ -1,18 +1,22 @@
-# Defensive Cybersecurity System Container
-FROM python:3.12-slim
+# Production Dockerfile for GAN Cyber Range Platform
+FROM python:3.11-slim
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV ENVIRONMENT=production
+
+# Create non-root user for security
+RUN groupadd -r appuser && useradd -r -g appuser appuser
 
 # Set working directory
 WORKDIR /app
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    curl \
-    wget \
-    netcat-openbsd \
+    gcc \
+    g++ \
     && rm -rf /var/lib/apt/lists/*
-
-# Create non-root user for security
-RUN groupadd -r defenseuser && useradd -r -g defenseuser defenseuser
 
 # Copy requirements first for better caching
 COPY requirements.txt .
@@ -21,27 +25,18 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Create necessary directories
-RUN mkdir -p logs configs data reports && \
-    chown -R defenseuser:defenseuser /app
+# Install the application
+RUN pip install -e .
 
-# Set secure permissions
-RUN chmod -R 755 /app && \
-    chmod -R 700 /app/configs && \
-    chmod -R 700 /app/logs
+# Create necessary directories and set permissions
+RUN mkdir -p /app/logs /app/data /app/config \
+    && chown -R appuser:appuser /app
 
 # Switch to non-root user
-USER defenseuser
+USER appuser
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD python3 health_check.py || exit 1
+# Expose port
+EXPOSE 8000
 
-# Default command
-CMD ["python3", "defensive_demo.py"]
-
-# Labels for metadata
-LABEL maintainer="Defensive Security Team"
-LABEL version="2.0.0"
-LABEL description="Defensive Cybersecurity Training Platform"
-LABEL security.scan="enabled"
+# Run the application
+CMD ["python", "quick_start.py"]

@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-08-25T13:26:26.779666",
+  "summary": {
+    "total_tests": 15,
+    "passed_tests": 14,
+    "failed_tests": 1,
+    "success_rate": 0.9333333333333333,
+    "total_time": 29.153016567230225
+  },
+  "suites": {
+    "Generation 1 - Basic Functionality": {
+      "total": 5,
+      "passed": 4,
+      "failed": 1,
+      "time": 0.13348007202148438,
+      "success_rate": 0.8
+    },
+    "Generation 2 - Robust Operations": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "time": 2.003739356994629,
+      "success_rate": 1.0
+    },
+    "Generation 3 - Optimized Performance": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "time": 25.012749433517456,
+      "success_rate": 1.0
+    },
+    "Integration Testing": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "time": 2.0029752254486084,
+      "success_rate": 1.0
+    }
+  },
+  "errors": [
+    "Generation 1 - Basic Functionality: test_basic_import (__main__.TestGeneration1Basic.test_basic_import)"
+  ]
+}

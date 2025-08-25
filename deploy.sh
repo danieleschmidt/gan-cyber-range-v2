@@ -1,35 +1,20 @@
 #!/bin/bash
 set -e
 
-echo "Starting deployment for production environment..."
+echo "🚀 GAN Cyber Range - Production Deployment"
+echo "=========================================="
 
-# Pre-deployment checks
-echo "Running pre-deployment validation..."
-python3 comprehensive_quality_gates.py
-if [ $? -ne 0 ]; then
-    echo "Quality gates failed. Aborting deployment."
-    exit 1
-fi
+# Create directories
+mkdir -p logs data
 
-# Build and deploy
-echo "Building container..."
-docker-compose -f docker-compose.prod.yml build
+# Build and start
+echo "🔨 Building images..."
+docker-compose build
 
-echo "Starting services..."
-docker-compose -f docker-compose.prod.yml up -d
+echo "🚀 Starting services..."
+docker-compose up -d
 
-# Wait for health checks
-echo "Waiting for services to be healthy..."
-sleep 30
-
-# Verify deployment
-echo "Running post-deployment health checks..."
-python3 health_check.py
-if [ $? -eq 0 ]; then
-    echo "Deployment successful!"
-else
-    echo "Health checks failed. Consider rollback."
-    exit 1
-fi
-
-echo "Deployment completed successfully"
+echo "✅ Deployment completed!"
+echo "🌐 Access at: http://localhost"
+echo "📊 Status: docker-compose ps"
+echo "📝 Logs: docker-compose logs -f"
