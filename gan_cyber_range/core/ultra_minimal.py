@@ -520,6 +520,101 @@ class UltraMinimalCyberRange:
         return summary
 
 
+class UltraMinimalDemo:
+    """Ultra-minimal demo for defensive cybersecurity training"""
+    
+    def __init__(self):
+        self.threat_patterns = [
+            {"type": "reconnaissance", "severity": 0.3, "technique": "T1046"},
+            {"type": "credential_access", "severity": 0.7, "technique": "T1110"},
+            {"type": "lateral_movement", "severity": 0.8, "technique": "T1021"},
+            {"type": "exfiltration", "severity": 0.9, "technique": "T1041"}
+        ]
+        self.generator = UltraMinimalGenerator()
+        self.cyber_range = UltraMinimalCyberRange()
+    
+    def detect_threats(self) -> List[Dict]:
+        """Simulate threat detection"""
+        detected = []
+        for pattern in self.threat_patterns:
+            if random.random() > 0.3:  # 70% detection rate
+                detected.append({
+                    **pattern,
+                    "detected_at": datetime.now().isoformat(),
+                    "confidence": round(random.uniform(0.6, 0.95), 2)
+                })
+        return detected
+    
+    def generate_defense_recommendations(self, threats: List[Dict]) -> List[str]:
+        """Generate defensive recommendations"""
+        recommendations = []
+        
+        for threat in threats:
+            if threat["type"] == "reconnaissance":
+                recommendations.append("Deploy network monitoring and IDS")
+            elif threat["type"] == "credential_access":
+                recommendations.append("Implement MFA and password policies")
+            elif threat["type"] == "lateral_movement":
+                recommendations.append("Network segmentation and privilege management")
+            elif threat["type"] == "exfiltration":
+                recommendations.append("Data loss prevention and encryption")
+        
+        return list(set(recommendations))
+    
+    def run(self) -> Dict:
+        """Run comprehensive defensive demo"""
+        start_time = time.time()
+        
+        # Initialize cyber range
+        range_id = self.cyber_range.deploy()
+        self.cyber_range.start()
+        
+        # Generate synthetic attacks for training
+        synthetic_attacks = self.generator.generate(num_samples=8)
+        
+        # Simulate execution for training
+        attack_results = []
+        for attack in synthetic_attacks:
+            result = self.cyber_range.execute_attack(attack)
+            attack_results.append(result)
+        
+        # Simulate threat detection
+        detected_threats = self.detect_threats()
+        
+        # Generate recommendations
+        recommendations = self.generate_defense_recommendations(detected_threats)
+        
+        # Calculate metrics
+        total_threats = len(self.threat_patterns)
+        detected_count = len(detected_threats)
+        detection_rate = detected_count / total_threats if total_threats > 0 else 0
+        
+        # Get range metrics
+        range_metrics = self.cyber_range.get_metrics()
+        attack_summary = self.cyber_range.get_attack_summary()
+        
+        # Calculate diversity
+        diversity = self.generator.diversity_score(synthetic_attacks)
+        
+        end_time = time.time()
+        
+        return {
+            "status": "defensive_demo_completed",
+            "execution_time": round(end_time - start_time, 3),
+            "cyber_range_id": range_id,
+            "threats_analyzed": total_threats,
+            "threats_detected": detected_count,
+            "detection_rate": round(detection_rate, 2),
+            "synthetic_attacks_generated": len(synthetic_attacks),
+            "attack_diversity_score": diversity,
+            "attack_execution_results": attack_results,
+            "range_metrics": range_metrics,
+            "attack_summary": attack_summary,
+            "defense_recommendations": recommendations,
+            "timestamp": datetime.now().isoformat()
+        }
+
+
 def validate_ultra_minimal_functionality() -> bool:
     """Validate that ultra-minimal functionality works"""
     try:

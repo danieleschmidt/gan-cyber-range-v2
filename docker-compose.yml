@@ -3,92 +3,21 @@ version: '3.8'
 services:
   gan-cyber-range:
     build: .
-    restart: unless-stopped
     ports:
       - "8000:8000"
     environment:
-      - GCR_ENVIRONMENT=production
-      - GCR_DEBUG=false
-      - GCR_WORKERS=4
-      - GCR_LOG_LEVEL=info
+      - ENVIRONMENT=production
     volumes:
       - ./logs:/app/logs
-      - ./config:/app/config
-    networks:
-      - cyber-range-network
-    depends_on:
-      - redis
-      - postgres
-    healthcheck:
-      test: ["CMD", "python3", "-c", "import requests; requests.get('http://localhost:8000/health')"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
-  redis:
-    image: redis:7-alpine
+      - ./data:/app/data
     restart: unless-stopped
-    command: redis-server --appendonly yes
-    volumes:
-      - redis_data:/data
-    networks:
-      - cyber-range-network
-
-  postgres:
-    image: postgres:15-alpine
-    restart: unless-stopped
-    environment:
-      - POSTGRES_DB=gan_cyber_range
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - cyber-range-network
 
   nginx:
     image: nginx:alpine
-    restart: unless-stopped
     ports:
       - "80:80"
-      - "443:443"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - gan-cyber-range
-    networks:
-      - cyber-range-network
-
-  prometheus:
-    image: prom/prometheus:latest
     restart: unless-stopped
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus_data:/prometheus
-    networks:
-      - cyber-range-network
-
-  grafana:
-    image: grafana/grafana:latest
-    restart: unless-stopped
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
-    volumes:
-      - grafana_data:/var/lib/grafana
-    networks:
-      - cyber-range-network
-
-volumes:
-  redis_data:
-  postgres_data:
-  prometheus_data:
-  grafana_data:
-
-networks:
-  cyber-range-network:
-    driver: bridge
