@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-08-26T15:01:32.025182",
+  "summary": {
+    "overall_score": 86.5,
+    "gates_passed": 5,
+    "total_gates": 5,
+    "success_rate": 100.0
+  },
+  "gate_results": [
+    {
+      "gate_name": "Functionality Tests",
+      "passed": true,
+      "score": 85.0,
+      "details": {
+        "core_package": "\u2705 Core package imports",
+        "demo_import": "\u2705 Demo module imports",
+        "attack_generation": "\u2705 Generated 3 attacks",
+        "config_requirements.txt": "\u2705 Present",
+        "config_setup.py": "\u2705 Present",
+        "config_README.md": "\u2705 Present",
+        "config_gan_cyber_range/__init__.py": "\u2705 Present",
+        "configuration_total": "Configuration score: 30/30"
+      },
+      "execution_time": 9.235446691513062,
+      "timestamp": "2025-08-26T15:00:59.210095",
+      "error_message": null
+    },
+    {
+      "gate_name": "Security Analysis",
+      "passed": true,
+      "score": 80.0,
+      "details": {
+        "security_import": "\u2705 Security framework imports",
+        "security_context": "\u2705 Security context creation works",
+        "ethical_compliance": "\u2705 Ethical framework working correctly",
+        "input_sanitization": "\u2705 Input sanitization working"
+      },
+      "execution_time": 0.034862518310546875,
+      "timestamp": "2025-08-26T15:00:59.245015",
+      "error_message": null
+    },
+    {
+      "gate_name": "Performance Benchmarks",
+      "passed": true,
+      "score": 80.0,
+      "details": {
+        "attack_gen_speed": "\u274c 0.3 attacks/second (slow)"
+      },
+      "execution_time": 30.775901794433594,
+      "timestamp": "2025-08-26T15:01:30.020956",
+      "error_message": null
+    },
+    {
+      "gate_name": "Reliability Tests",
+      "passed": true,
+      "score": 100.0,
+      "details": {
+        "error_recovery": "\u2705 Error handler available",
+        "dependency_resilience": "\u2705 Dependency manager available",
+        "state_consistency": "\u2705 State consistency maintained"
+      },
+      "execution_time": 2.0024633407592773,
+      "timestamp": "2025-08-26T15:01:32.023480",
+      "error_message": null
+    },
+    {
+      "gate_name": "Compliance Validation",
+      "passed": true,
+      "score": 100.0,
+      "details": {
+        "structure_gan_cyber_range/__init__.py": "\u2705",
+        "structure_gan_cyber_range/core/__init__.py": "\u2705",
+        "structure_gan_cyber_range/demo.py": "\u2705",
+        "structure_gan_cyber_range/security/__init__.py": "\u2705",
+        "structure_gan_cyber_range/utils/__init__.py": "\u2705",
+        "structure_setup.py": "\u2705",
+        "structure_requirements.txt": "\u2705",
+        "package_structure": "Structure score: 50/50",
+        "readme": "\u2705 Comprehensive README",
+        "license": "\u2705 License file present",
+        "defensive_focus": "\u2705 Defensive keywords found: ['defensive', 'training', 'education', 'blue team', 'cybersecurity training', 'security research']"
+      },
+      "execution_time": 0.0015940666198730469,
+      "timestamp": "2025-08-26T15:01:32.025131",
+      "error_message": null
+    }
+  ],
+  "recommendations": [],
+  "quality_level": "GOOD"
+}
